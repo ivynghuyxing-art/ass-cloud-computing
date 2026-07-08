@@ -16,7 +16,6 @@ $navCategories = $_db->query('SELECT * FROM category ORDER BY category_name')->f
 <body>
     <div id="info"><?= temp('info') ?></div>
     <header>
-        <h1><a href="/">Book Nest</a></h1>
         
         <div class="auth">
         <?php 
@@ -50,9 +49,9 @@ $navCategories = $_db->query('SELECT * FROM category ORDER BY category_name')->f
 
     <nav class="navbar"> 
 
+     <a href="/">Book Nest</a>
         <div class="menu"> 
-                <a href="../home.php"><b>Home</b></a> 
-                <a href="/customer/books.php"><b>Books</b></a>
+                <a href="../home.php"><b>Home</b></a>
                 <div class="dropdown nav-dropdown">
                     <button type="button" class="dropdown-toggle"><b>Categories</b></button>
                     <div class="dropdown-content nav-dropdown-content">
@@ -62,8 +61,8 @@ $navCategories = $_db->query('SELECT * FROM category ORDER BY category_name')->f
                         <?php endforeach; ?>
                     </div>
                 </div>
-                <a href="/customer/about_us.php"><b>About Us</b></a> 
                 <a href ="/customer/new_arrivals.php"><b>New Arrivals</b></a>
+                <a href="/customer/about_us.php"><b>About Us</b></a> 
         </div> 
 
 

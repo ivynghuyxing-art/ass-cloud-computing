@@ -32,8 +32,14 @@ if(is_post()){
     // Validate password
     if(!$password){
         $_err['password'] = 'Required';
-    } else if(strlen($password) < 5 || strlen($password) > 100){
-        $_err['password'] = 'Between 5-100 characters only';
+    } else if(
+        strlen($password) < 8 ||
+        !preg_match('/[A-Z]/', $password) ||
+        !preg_match('/[a-z]/', $password) ||
+        !preg_match('/[0-9]/', $password) ||
+        !preg_match('/[!@#$%^&*()]/', $password)
+    ){
+        $_err['password'] = 'Password must contain at least 8 characters, including one uppercase letter, one lowercase letter, one number, and one special character.';
     }
  
     // Validate confirm password
@@ -128,17 +134,21 @@ $title = 'Register';
                 <label for="password">Password</label>
                 <?= html_password('password', 'maxlength="100"') ?>
                 <?= err('password') ?>
- 
+
+                <div class="password-hint">
+                    <p>Password must meet the following requirements:</p>
+                    <ul>
+                        <li>At least 8 characters</li>
+                        <li>One uppercase letter</li>
+                        <li>One lowercase letter</li>
+                        <li>One number</li>
+                        <li>One special character (e.g., !@#$%^&*)</li>
+                    </ul>
+                </div>
+
                 <label for="confirm">Confirm Password</label>
                 <?= html_password('confirm', 'maxlength="100"') ?>
                 <?= err('confirm') ?>
- 
-                <label for="photo">Profile Photo</label>
-                <label class="upload">
-                    <?= html_file('photo', 'image/*', 'hidden') ?>
-                    <img src="/images/photo.jpg">
-                </label>
-                <?= err('photo') ?>
  
                 <button type="submit" class="register-btn">Register</button>
  
