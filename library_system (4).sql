@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主机： 127.0.0.1
--- 生成日期： 2026-07-07 16:37:30
+-- 生成日期： 2026-07-08 13:52:10
 -- 服务器版本： 10.4.32-MariaDB
 -- PHP 版本： 8.2.12
 
@@ -89,11 +89,22 @@ CREATE TABLE `user` (
   `user_id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `email` int(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `profile_photo` varchar(100) NOT NULL,
   `role` varchar(20) NOT NULL,
-  `status` varchar(20) NOT NULL,
-  `phone` varchar(15) NOT NULL
+  `phone` varchar(15) NOT NULL,
+  `verification_code` varchar(6) NOT NULL,
+  `gender` varchar(10) NOT NULL,
+  `valid` varchar(10) NOT NULL,
+  `email_verified` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- 转存表中的数据 `user`
+--
+
+INSERT INTO `user` (`user_id`, `name`, `password`, `email`, `profile_photo`, `role`, `phone`, `verification_code`, `gender`, `valid`, `email_verified`) VALUES
+(1, 'ivy', 'e5529d75e36c74a493c29cae8bbb6aafdd596979', '0', '6a4e381f611aa.jpg', 'customer', '', '', 'F', '1', 1);
 
 --
 -- 转储表的索引
@@ -165,7 +176,7 @@ ALTER TABLE `fine`
 -- 使用表AUTO_INCREMENT `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- 限制导出的表

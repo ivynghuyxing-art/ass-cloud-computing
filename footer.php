@@ -1,7 +1,7 @@
     </main>
 
     <footer>
-        <b>Stationary Hub</b>
+        <b>Book Nest</b>
     </footer>
 
 </body>

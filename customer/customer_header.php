@@ -16,7 +16,7 @@ $navCategories = $_db->query('SELECT * FROM category ORDER BY category_name')->f
 <body>
     <div id="info"><?= temp('info') ?></div>
     <header>
-        <h1><a href="/">Cozy Hub</a></h1>
+        <h1><a href="/">Book Nest</a></h1>
         
         <div class="auth">
         <?php 
@@ -35,10 +35,11 @@ $navCategories = $_db->query('SELECT * FROM category ORDER BY category_name')->f
                     <img src="/photo/<?= ($_user->profile_photo) ?>" alt="Profile Photo">
 
                     <div class="dropdown-content">
-                        <a href="/customer/customer_profile.php">👤 My Profile</a>
-                        <a href="/customer/order_history.php">🕰️ Orders History</a>
-                        <a href="/customer/change_password.php">🔒 Change Password</a>
-                        <a href="/customer/wishlist.php">❤️ My WishList</a>
+                        <a href="/customer/customer_profile.php">My Profile</a>
+                        <a href="/customer/borrowing_history.php">My Borrowing History</a>
+                        <a href="/customer/change_password.php">Change Password</a>
+                        <a href="/customer/wishlist.php">My WishList</a>
+                        <a href="/customer/fines.php">My Fine</a>
                     </div>
                 </div>
             <?php endif; ?>
@@ -50,8 +51,8 @@ $navCategories = $_db->query('SELECT * FROM category ORDER BY category_name')->f
     <nav class="navbar"> 
 
         <div class="menu"> 
-                <a href="/customer/home.php"><b>Home</b></a> 
-                <a href="/product/viewproduct.php"><b>Product</b></a>
+                <a href="../home.php"><b>Home</b></a> 
+                <a href="/customer/books.php"><b>Books</b></a>
                 <div class="dropdown nav-dropdown">
                     <button type="button" class="dropdown-toggle"><b>Categories</b></button>
                     <div class="dropdown-content nav-dropdown-content">
@@ -62,7 +63,9 @@ $navCategories = $_db->query('SELECT * FROM category ORDER BY category_name')->f
                     </div>
                 </div>
                 <a href="/customer/about_us.php"><b>About Us</b></a> 
+                <a href ="/customer/new_arrivals.php"><b>New Arrivals</b></a>
         </div> 
+
 
         <div class="right">
              <div class ="search-bar">
@@ -70,19 +73,7 @@ $navCategories = $_db->query('SELECT * FROM category ORDER BY category_name')->f
                     <input type="search" id="search"name="product_name" placeholder="Search product">
                     <button type="submit">Search</button>
                 </form>        
-             </div>
-        
-
-            <div class="cart-btn">
-            <?php
-            $cart_count = 0;
-            if (isset($_SESSION['user'])) {
-                $stmCount = $_db->prepare("SELECT COALESCE(SUM(ci.quantity),0) FROM cart_item ci JOIN cart c ON ci.cart_id=c.cart_id WHERE c.user_id=?");
-                $stmCount->execute([$_SESSION['user']->user_id]);
-                $cart_count = $stmCount->fetchColumn();
-            }
-            ?>
-            <a href="/customer/cart.php">🛒 (<?= $cart_count ?>)</a>     
+             </div>    
         </div>
     </div>
 </nav>

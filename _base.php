@@ -189,20 +189,14 @@ function get_mail() {
     // $m->Password = 'npsg gzfd pnio aylm';  
     $m->Password = 'upay jevm iime yhxy';
     $m->CharSet = 'utf-8';
-    $m->setFrom($m->Username, 'Cozy Hub');
+    $m->setFrom($m->Username, 'Book Nest');
 
     return $m;
 }
 
 
-$malaysia_states = [
-    'Johor','Kedah','Kelantan','Melaka','Negeri Sembilan',
-    'Pahang','Perak','Perlis','Pulau Pinang','Sabah',
-    'Sarawak','Selangor','Terengganu','Kuala Lumpur','Labuan','Putrajaya'
-];
 
-
-$_db = new PDO('mysql:dbname=stationary_shop', 'root', '', [
+$_db = new PDO('mysql:dbname=library_system', 'root', '', [
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ,
 ]);
 
