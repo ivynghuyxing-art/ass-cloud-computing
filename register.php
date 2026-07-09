@@ -7,7 +7,6 @@ if(is_post()){
     $password = req('password');
     $confirm  = req('confirm');
     $gender   = req('gender');
-    $f        = get_file('photo');
  
     // Validate name
     if(!$name){
@@ -37,7 +36,7 @@ if(is_post()){
         !preg_match('/[A-Z]/', $password) ||
         !preg_match('/[a-z]/', $password) ||
         !preg_match('/[0-9]/', $password) ||
-        !preg_match('/[!@#$%^&*()]/', $password)
+        !preg_match('/[!@#$%^&*()_]/', $password)
     ){
         $_err['password'] = 'Password must contain at least 8 characters, including one uppercase letter, one lowercase letter, one number, and one special character.';
     }
@@ -56,23 +55,13 @@ if(is_post()){
         $_err['gender'] = 'Invalid gender';
     }
  
-    // Validate photo
-    if(!$f){
-        $_err['photo'] = 'Required';
-    } else if(!str_starts_with($f->type, 'image/')){
-        $_err['photo'] = 'Must be an image';
-    } else if($f->size > 1 * 1024 * 1024){
-        $_err['photo'] = 'Maximum 1MB';
-    }
- 
 if(!$_err){
-        $photo = save_photo($f, 'photo');
  
         // Generate 6-digit verification code
         $verification_code = str_pad(rand(0, 999999), 6, '0', STR_PAD_LEFT);
  
-        $stm = $_db->prepare("INSERT INTO user (name, email, password, profile_photo, role,valid, verification_code, email_verified, gender) VALUES (?,?,SHA1(?),?,'customer',1,?,0,?)");
-        $stm->execute([$name, $email, $password, $photo, $verification_code, $gender]);
+        $stm = $_db->prepare("INSERT INTO user (name, email, password,role,valid, verification_code, email_verified, gender) VALUES (?,?,SHA1(?),'customer',1,?,0,?)");
+        $stm->execute([$name, $email, $password, $verification_code, $gender]);
  
         // Send verification email
         $mail = get_mail();
@@ -142,7 +131,7 @@ $title = 'Register';
                         <li>One uppercase letter</li>
                         <li>One lowercase letter</li>
                         <li>One number</li>
-                        <li>One special character (e.g., !@#$%^&*)</li>
+                        <li>One special character (e.g., !@#$%^&*_)</li>
                     </ul>
                 </div>
 
