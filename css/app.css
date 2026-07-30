@@ -264,7 +264,7 @@ nav a {
     margin: 0;
     font-size: 36px;
     font-weight: bold;
-    background: linear-gradient(135deg, darkred, rgb(173,8,8));
+    background: linear-gradient(135deg,#6F4E37);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -318,7 +318,7 @@ nav a {
 .box button, .auth-form button, .register-btn, .box a.login {
     width: 100%;
     padding: 10px;
-    background:darkred;
+    background:#6F4E37;
     color: white;
     border: none;
     border-radius: 6px;
