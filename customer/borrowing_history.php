@@ -71,3 +71,5 @@ $records = $stm->fetchAll();
     <?php endif; ?>
   </div>
 </main>
+
+<?php include '../footer.php'; ?>

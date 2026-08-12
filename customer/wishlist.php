@@ -112,3 +112,5 @@ if (is_post() && post('action') === 'add_to_cart') {
     <?php endif; ?>
 
 </main>
+
+<?php include '../footer.php'; ?>
