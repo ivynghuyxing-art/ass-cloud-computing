@@ -108,3 +108,12 @@ $fetch_profile = $_SESSION['user'];
 
 
     <div class="main-content">
+        <?php $info = temp('info'); ?>
+
+<?php if (!empty($info)): ?>
+
+    <div id="info">
+        <?= encode($info) ?>
+    </div>
+
+<?php endif; ?>

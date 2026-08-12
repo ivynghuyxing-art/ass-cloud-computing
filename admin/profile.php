@@ -383,19 +383,6 @@ function e($value)
 
 
 
-    <!-- =================================================
-         SUCCESS MESSAGE
-    ================================================== -->
-
-    <?php $info = temp('info'); ?>
-
-<?php if (!empty($info)): ?>
-    <div id="info">
-        <?= encode($info) ?>
-    </div>
-<?php endif; ?>
-
-
 
     <div class="profile-grid">
 

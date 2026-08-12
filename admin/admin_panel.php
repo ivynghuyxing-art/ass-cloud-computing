@@ -16,30 +16,27 @@ require __DIR__ . '/admin_header.php';
 switch ($page) {
 
     case 'profile':
-
         require __DIR__ . '/profile.php';
+        break;
 
+
+    case 'books':
+        require __DIR__ . '/books.php';
         break;
 
 
     case 'add':
-
         require __DIR__ . '/add.php';
-
         break;
 
 
     case 'modify':
-
         require __DIR__ . '/modify.php';
-
         break;
 
 
     default:
-
         require __DIR__ . '/profile.php';
-
         break;
 }
 
