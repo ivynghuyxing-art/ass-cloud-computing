@@ -13,6 +13,29 @@ $navCategories = $_db->query('SELECT * FROM category ORDER BY category_name')->f
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="/js/app.js"></script>
 </head>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var dropdown = document.querySelector('.user-photo-dropdown');
+    
+    if (dropdown) {
+        var img = dropdown.querySelector('img');
+        if (img) {
+            img.addEventListener('click', function(e) {
+                e.stopPropagation();
+                dropdown.classList.toggle('active');
+            });
+        }
+    }
+    
+    document.addEventListener('click', function() {
+        if (dropdown) {
+            dropdown.classList.remove('active');
+        }
+    });
+});
+</script>
+
 <body>
     <div id="info"><?= temp('info') ?></div>
     <header>
@@ -34,11 +57,11 @@ $navCategories = $_db->query('SELECT * FROM category ORDER BY category_name')->f
                     <img src="/photo/<?= ($_user->profile_photo) ?>" alt="Profile Photo">
 
                     <div class="dropdown-content">
-                        <a href="/customer/customer_profile.php">My Profile</a>
-                        <a href="/customer/borrowing_history.php">My Borrowing History</a>
-                        <a href="/customer/change_password.php">Change Password</a>
-                        <a href="/customer/wishlist.php">My WishList</a>
-                        <a href="/customer/fines.php">My Fine</a>
+                        <a href="/customer/customer_profile.php">👤My Profile</a>
+                        <a href="/customer/borrowing_history.php">📋My Borrowing History</a>
+                        <a href="/customer/change_password.php">🔑Change Password</a>
+                        <a href="/customer/wishlist.php">❤️My WishList</a>
+                        <a href="/customer/fines.php">💰My Fine</a>
                     </div>
                 </div>
             <?php endif; ?>
