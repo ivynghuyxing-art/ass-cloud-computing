@@ -3,6 +3,27 @@ require_once '../_base.php';
 $title = 'My Borrowing History';
 $_title = '';
 include 'customer_header.php';
+
+$user_id = $_user->user_id;
+
+$stm = $_db->prepare("
+    SELECT 
+        b.borrowing_id,
+        b.borrow_date,
+        b.due_date,
+        b.return_date,
+        b.status,
+        bk.book_id,
+        bk.title,
+        bk.author,
+        bk.photo
+    FROM borrowing b
+    JOIN book bk ON b.book_id = bk.book_id
+    WHERE b.user_id = ?
+    ORDER BY b.borrow_date DESC
+");
+$stm->execute([$user_id]);
+$records = $stm->fetchAll();
 ?>
 
 <main class="borrowing-page">
