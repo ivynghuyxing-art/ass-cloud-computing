@@ -3984,3 +3984,479 @@ body.admin-layout {
 .back-home:hover {
     color: #000;
 }
+
+
+/* ===== Fines Page ===== */
+.fines-page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 20px 60px;
+}
+
+.page-header {
+    margin-bottom: 30px;
+}
+
+.page-header h1 {
+    font-size: 32px;
+    color: #4E342E;
+    margin: 0 0 4px;
+}
+
+.page-header p {
+    font-size: 16px;
+    color: #6D4C41;
+    margin: 0;
+}
+
+/* ===== Stats ===== */
+.fines-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid #EFEBE6;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.stat-card .stat-number {
+    display: block;
+    font-size: 28px;
+    font-weight: 700;
+    color: #4E342E;
+}
+
+.stat-card .stat-label {
+    font-size: 14px;
+    color: #8D6E63;
+}
+
+.stat-danger .stat-number {
+    color: #b91c1c;
+}
+
+.stat-success .stat-number {
+    color: #16a34a;
+}
+
+/* ===== Table ===== */
+.table-container {
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #EFEBE6;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.fines-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.fines-table thead {
+    background: #6F4E37;
+    color: white;
+}
+
+.fines-table th {
+    padding: 14px 18px;
+    text-align: left;
+    font-weight: 600;
+}
+
+.fines-table td {
+    padding: 14px 18px;
+    border-bottom: 1px solid #EFEBE6;
+    vertical-align: middle;
+}
+
+.fines-table tbody tr:hover {
+    background: #FFFBF5;
+}
+
+/* ===== Book Info ===== */
+.book-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.book-info img {
+    width: 40px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #EFEBE6;
+}
+
+.book-title {
+    font-weight: 600;
+    color: #4E342E;
+}
+
+.book-author {
+    font-size: 13px;
+    color: #8D6E63;
+}
+
+/* ===== Amount ===== */
+.amount {
+    font-weight: 700;
+    color: #4E342E;
+}
+
+/* ===== Badges ===== */
+.badge-paid {
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    background: #dcfce7;
+    color: #16a34a;
+}
+
+.badge-unpaid {
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    background: #fef2f2;
+    color: #b91c1c;
+}
+
+.badge-pending {
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    background: #fef3c7;
+    color: #d97706;
+}
+
+/* ===== Buttons ===== */
+.btn-pay {
+    display: inline-block;
+    padding: 6px 20px;
+    background: #6F4E37;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-pay:hover {
+    background: #5D4037;
+}
+
+.text-muted {
+    color: #8D6E63;
+}
+
+/* ===== Empty State ===== */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.empty-state .empty-icon {
+    font-size: 56px;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.empty-state h2 {
+    font-size: 20px;
+    color: #4E342E;
+    margin: 0 0 8px;
+}
+
+.empty-state p {
+    font-size: 16px;
+    color: #8D6E63;
+    margin: 0;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    .fines-stats {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .fines-table {
+        font-size: 13px;
+    }
+    
+    .fines-table th,
+    .fines-table td {
+        padding: 10px 12px;
+    }
+}
+
+@media (max-width: 600px) {
+    .fines-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .fines-table thead {
+        display: none;
+    }
+    
+    .fines-table tbody tr {
+        display: block;
+        padding: 16px;
+        border-bottom: 2px solid #EFEBE6;
+    }
+    
+    .fines-table td {
+        display: flex;
+        justify-content: space-between;
+        padding: 6px 0;
+        border-bottom: none;
+    }
+    
+    .fines-table td:before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: #6D4C41;
+    }
+}
+
+/* ===== Category Page ===== */
+.category-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 20px 60px;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 3px solid #EFEBE6;
+}
+
+.page-header h1 {
+    font-size: 36px;
+    color: #4E342E;
+    margin: 0 0 8px;
+}
+
+.page-header p {
+    font-size: 18px;
+    color: #6D4C41;
+    margin: 0;
+}
+
+/* ===== Category Grid ===== */
+.category-grid-wrapper {
+    margin-bottom: 50px;
+}
+
+.section-title {
+    font-size: 24px;
+    color: #4E342E;
+    margin-bottom: 20px;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.category-card {
+    background: #FFFBF5;
+    border: 1px solid #EFEBE6;
+    border-radius: 16px;
+    padding: 30px 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #4E342E;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.category-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.10);
+    border-color: #D7CCC8;
+}
+
+.category-card.active {
+    border-color: #6F4E37;
+    background: #F5F0EB;
+}
+
+.category-card .category-icon {
+    font-size: 40px;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.category-card h3 {
+    font-size: 18px;
+    margin: 0 0 6px;
+    color: #4E342E;
+}
+
+.category-card .book-count {
+    font-size: 13px;
+    color: #8D6E63;
+}
+
+/* ===== Book Grid ===== */
+.category-books-section {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 2px solid #EFEBE6;
+}
+
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.book-card {
+    background: white;
+    border: 1px solid #EFEBE6;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.book-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
+}
+
+.book-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    background: #F5F0EB;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.book-info {
+    padding: 14px;
+}
+
+.book-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #4E342E;
+    margin: 0 0 4px;
+    min-height: 40px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.book-author {
+    font-size: 14px;
+    color: #8D6E63;
+    margin: 0 0 6px;
+}
+
+.book-stock {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.book-stock.in-stock {
+    color: #16a34a;
+}
+
+.book-stock.out-of-stock {
+    color: #b91c1c;
+}
+
+.book-actions {
+    padding: 0 14px 14px;
+}
+
+.btn-view {
+    display: block;
+    padding: 8px;
+    background: #EFEBE6;
+    color: #4E342E;
+    border-radius: 6px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.btn-view:hover {
+    background: #D7CCC8;
+}
+
+/* ===== Empty State ===== */
+.empty-state {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.empty-state span {
+    font-size: 40px;
+}
+
+.empty-state p {
+    color: #8D6E63;
+    margin-top: 10px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 992px) {
+    .category-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .book-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .book-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .page-header h1 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+    .book-grid {
+        grid-template-columns: 1fr;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+    .category-card {
+        padding: 20px 16px;
+    }
+}
