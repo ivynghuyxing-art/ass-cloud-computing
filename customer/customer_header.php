@@ -62,6 +62,7 @@ $navCategories = $_db->query('SELECT * FROM category ORDER BY category_name')->f
                     </div>
                 </div>
                 <a href ="/customer/new_arrivals.php"><b>New Arrivals</b></a>
+                <a href ="/customer/fines.php"><b>My Fines</b></a>
                 <a href="/customer/about_us.php"><b>About Us</b></a> 
         </div> 
 

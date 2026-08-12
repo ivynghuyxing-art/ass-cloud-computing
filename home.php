@@ -1,9 +1,4 @@
 <?php
-require '_base.php';
-
-$_title = "";
-include 'customer/customer_header.php';
+header('Location: index.php');
+exit;
 ?>
-
-<?php
-include 'footer.php';
