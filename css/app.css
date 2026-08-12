@@ -3476,6 +3476,357 @@ tbody tr:nth-child(even) {
     padding-left:18px;
     margin:0;
 }
+/* =========================
+   ADMIN LAYOUT
+========================= */
+
+body.admin-layout {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f2ec;
+    color: #3b2a20;
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+    width: 230px;
+    min-height: 100vh;
+    background: #765239;
+    color: white;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar h2 {
+    margin: 0 0 35px;
+    font-size: 25px;
+    text-align: center;
+    color: white;
+}
+
+.sidebar .right {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebar .right a {
+    text-decoration: none;
+    color: white;
+    padding: 13px 16px;
+    border-radius: 8px;
+    transition: 0.2s;
+    font-weight: 500;
+}
+
+.sidebar .right a:hover {
+    background: #927158;
+}
+
+.sidebar .right a.active {
+    background: #f3e6d8;
+    color: #5d402d;
+    font-weight: bold;
+}
+
+.logout-btn {
+    margin-top: auto;
+}
+
+.logout-btn a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background: #5d402d;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.logout-btn a:hover {
+    background: #4c3425;
+}
+
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.main-content {
+    flex: 1;
+    padding: 40px;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   PROFILE PAGE
+========================= */
+
+.profile-page {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.page-header {
+    margin-bottom: 25px;
+}
+
+.page-header h1 {
+    margin: 0;
+    font-size: 32px;
+    color: #5d402d;
+}
+
+.page-header .muted {
+    margin-top: 8px;
+    color: #8a796c;
+}
+
+
+/* =========================
+   PROFILE GRID
+========================= */
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+
+/* =========================
+   PROFILE CARD
+========================= */
+
+.profile-card {
+    background: white;
+    padding: 28px;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.profile-card > img {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #ead9ca;
+    margin-bottom: 15px;
+}
+
+.profile-card h2 {
+    margin: 5px 0;
+    color: #5d402d;
+}
+
+.profile-card .muted {
+    color: #9a8778;
+}
+
+.profile-info {
+    margin-top: 25px;
+    text-align: left;
+}
+
+.profile-info div {
+    padding: 12px 0;
+    border-bottom: 1px solid #eee5dd;
+}
+
+.profile-info div:last-child {
+    border-bottom: none;
+}
+
+.profile-info strong {
+    display: block;
+    font-size: 13px;
+    color: #8a796c;
+    margin-bottom: 4px;
+}
+
+.profile-info span {
+    color: #3b2a20;
+}
+
+
+/* =========================
+   PROFILE FORM
+========================= */
+
+.profile-form {
+    background: white;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.profile-form h3 {
+    margin-top: 0;
+    color: #5d402d;
+    font-size: 21px;
+}
+
+.profile-form hr {
+    border: none;
+    border-top: 1px solid #eee1d6;
+    margin: 30px 0;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: 600;
+    color: #5d402d;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 11px 13px;
+    border: 1px solid #d9c8ba;
+    border-radius: 7px;
+    font-size: 15px;
+    outline: none;
+    background: #fffdfb;
+}
+
+.form-group input:focus {
+    border-color: #8b6549;
+    box-shadow: 0 0 0 3px rgba(139, 101, 73, 0.12);
+}
+
+
+/* =========================
+   PHOTO UPLOAD
+========================= */
+
+.form-group.upload label.upload {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.form-group.upload label.upload img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px dashed #bfa893;
+    padding: 4px;
+    transition: 0.2s;
+}
+
+.form-group.upload label.upload img:hover {
+    opacity: 0.8;
+    transform: scale(1.02);
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.form-actions button {
+    border: none;
+    padding: 11px 20px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.form-actions button[type="submit"] {
+    background: #765239;
+    color: white;
+}
+
+.form-actions button[type="submit"]:hover {
+    background: #60422f;
+}
+
+.reset-btn {
+    background: #e7ddd4;
+    color: #5d402d;
+}
+
+.reset-btn:hover {
+    background: #d9cabe;
+}
+
+
+/* =========================
+   ERROR / SUCCESS
+========================= */
+
+.error {
+    display: block;
+    color: #b23838;
+    font-size: 13px;
+    margin-top: 6px;
+}
+
+#info {
+    background: #765239;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 850px) {
+
+    body.admin-layout {
+        display: block;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-height: auto;
+    }
+
+    .profile-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .main-content {
+        padding: 25px;
+    }
+}
 
 /* ===== Hero Banner ===== */
 .hero-banner {
