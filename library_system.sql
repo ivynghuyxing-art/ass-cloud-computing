@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主机： 127.0.0.1
--- 生成日期： 2026-07-08 13:52:10
+-- 生成日期： 2026-08-12 22:24:19
 -- 服务器版本： 10.4.32-MariaDB
 -- PHP 版本： 8.2.12
 
@@ -35,7 +35,8 @@ CREATE TABLE `book` (
   `publish_year` date NOT NULL,
   `category_id` int(11) NOT NULL,
   `quantity` int(11) NOT NULL,
-  `available_quantity` int(11) NOT NULL
+  `available_quantity` int(11) NOT NULL,
+  `photo` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -104,7 +105,22 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `name`, `password`, `email`, `profile_photo`, `role`, `phone`, `verification_code`, `gender`, `valid`, `email_verified`) VALUES
-(1, 'ivy', 'e5529d75e36c74a493c29cae8bbb6aafdd596979', '0', '6a4e381f611aa.jpg', 'customer', '', '', 'F', '1', 1);
+(3, 'ivyng', '340df7cd198260406d273e8f4c5b4c05847d115e', 'ngivy0912@gmail.com', '', 'customer', '', '069590', 'F', '1', 0),
+(5, 'gugu', '2cffc7763b3b69433c819536f1b490c6fbba6292', 'ngivy808@gmail.com', '', 'customer', '', '840015', 'F', '1', 0),
+(6, 'ivy', '2cffc7763b3b69433c819536f1b490c6fbba6292', 'ivynghuyxingivy@gmail.com', '6a7cbe31b9fcc.jpg', 'customer', '', '', 'F', '1', 1);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `wishlist`
+--
+
+CREATE TABLE `wishlist` (
+  `wishlist_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `book_id` int(11) NOT NULL,
+  `created_at` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- 转储表的索引
@@ -145,6 +161,12 @@ ALTER TABLE `user`
   ADD PRIMARY KEY (`user_id`);
 
 --
+-- 表的索引 `wishlist`
+--
+ALTER TABLE `wishlist`
+  ADD PRIMARY KEY (`wishlist_id`);
+
+--
 -- 在导出的表使用AUTO_INCREMENT
 --
 
@@ -176,7 +198,13 @@ ALTER TABLE `fine`
 -- 使用表AUTO_INCREMENT `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- 使用表AUTO_INCREMENT `wishlist`
+--
+ALTER TABLE `wishlist`
+  MODIFY `wishlist_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- 限制导出的表
