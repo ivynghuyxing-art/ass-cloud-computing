@@ -153,3 +153,23 @@ $navCategories = $_db
         <h1 class="page-title">
             <?= $_title ?? 'Untitled' ?>
         </h1>
+
+            <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var dropdown = document.querySelector('.user-photo-dropdown');
+        if (dropdown) {
+            var img = dropdown.querySelector('img');
+            if (img) {
+                img.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    dropdown.classList.toggle('active');
+                });
+            }
+        }
+        document.addEventListener('click', function(e) {
+            if (dropdown && !dropdown.contains(e.target)) {
+                dropdown.classList.remove('active');
+            }
+        });
+    });
+    </script>

@@ -3934,3 +3934,67 @@ body.admin-layout {
     color: #6D4C41;
     margin: 0;
 }
+
+.form-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.form-actions-row {
+    display: flex;
+    gap: 10px;
+}
+
+.form-actions-row .btn-save,
+.form-actions-row .btn-reset {
+    flex: 1;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+    border: none;
+}
+
+.btn-save {
+    background: #6F4E37;
+    color: white;
+}
+
+.btn-save:hover {
+    background: #5D4037;
+}
+
+.btn-reset {
+    background: #EFEBE6;
+    color: #4E342E;
+}
+
+.btn-reset:hover {
+    background: #D7CCC8;
+}
+
+.btn-back-home {
+    display: block;
+    width: 100%;
+    padding: 10px 20px;
+    background: transparent;
+    color: #6F4E37;
+    border: 1.5px solid #6F4E37;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    transition: 0.3s;
+    box-sizing: border-box;
+}
+
+.btn-back-home:hover {
+    background: #6F4E37;
+    color: white;
+}

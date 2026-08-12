@@ -89,9 +89,11 @@ if (is_post()) {
             
             <!-- Buttons -->
             <div class="form-actions">
+                <div class="form-actions-row">
                 <button type="submit" class="btn-save">Submit</button>
                 <button type="reset" class="btn-reset">Reset</button>
-                <a href="/" class="btn-back-home">Back To Home</a>
+            </div>
+            <a href="/" class="btn-back-home">Back To Home</a>
             </div>
             
         </form>
