@@ -24,7 +24,7 @@ include 'customer_header.php';
             <p>Book Nest was founded with a simple mission — to make reading accessible to everyone. From a small community library in Penang, we have grown into a digital library system serving readers across Malaysia.</p>
             <p>We believe every book can inspire and transform. At Book Nest, we are committed to bringing a diverse collection of books to readers everywhere.</p>
         </div>
-        <img src ="/images/favicon.png" alt = "About Cozy Hub" style = "width :100%;border-radius:16px ">
+        <img src ="/images/favicon.png" alt = "About Book Nest" style = "width :100%;border-radius:16px ">
     </div>
 
     <!-- Values -->

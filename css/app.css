@@ -3557,3 +3557,29 @@ tbody tr:nth-child(even) {
     font-size: 14px;
     color: #6D4C41;
 }
+
+/* ===== Category Page ===== */
+.category-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 20px 60px;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 3px solid #EFEBE6;
+}
+
+.page-header h1 {
+    font-size: 36px;
+    color: #4E342E;
+    margin: 0 0 8px;
+}
+
+.page-header p {
+    font-size: 18px;
+    color: #6D4C41;
+    margin: 0;
+}

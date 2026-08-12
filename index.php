@@ -20,7 +20,7 @@ include 'customer/customer_header.php';
     <!-- ===== QUICK LINKS ===== -->
     <section class="quick-links">
         <a href="/customer/category.php" class="quick-card">
-        <div class="icon">📂</div>
+        <div class="icon">📚</div>
         <h3>Categories</h3>
         <p>Browse books by genre</p>
     </a>
