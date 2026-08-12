@@ -5,86 +5,141 @@ $title = 'Categories';
 $_title = '';
 
 include 'customer_header.php';
-?>
 
-<main class="category-page">
+$category_id = (int)req('id');
 
-    <!-- PAGE HEADER -->
-    <div class="page-header">
-        <h1>📚 Categories</h1>
-        <p>Browse our collection by genre and find your next great read</p>
-    </div>
-
-<?php
+// Get all categories
 $categories = $_db->query("
     SELECT *
     FROM category
     ORDER BY category_name
 ")->fetchAll();
-?>
 
-<div class="category-grid">
-
-    <?php foreach ($categories as $category): ?>
-
-        <a href="category.php?id=<?= $category->category_id ?>"
-           class="category-card">
-
-            <h3>
-                <?= encode($category->category_name) ?>
-            </h3>
-
-        </a>
-
-    <?php endforeach; ?>
-
-</div>
-
-
-<?php
-
-$id = get('id');
-
-if ($id) {
-
+// Get books for selected category
+$books = [];
+if ($category_id > 0) {
     $stmt = $_db->prepare("
         SELECT *
         FROM book
         WHERE category_id = ?
         ORDER BY title
     ");
-
-    $stmt->execute([$id]);
-
+    $stmt->execute([$category_id]);
     $books = $stmt->fetchAll();
-
+}
 ?>
 
-    <section class="category-section">
+<main class="category-page">
 
-        <?php foreach ($books as $book): ?>
+    <!-- ===== PAGE HEADER ===== -->
+    <div class="page-header">
+        <h1>📚 Categories</h1>
+        <p>Browse our collection by genre and find your next great read</p>
+    </div>
 
-            <div class="product-card">
+    <!-- ===== CATEGORY GRID ===== -->
+    <div class="category-grid-wrapper">
+        <h2 class="section-title">All Categories</h2>
+        <div class="category-grid">
+            <?php foreach ($categories as $category): ?>
+                <a href="?id=<?= $category->category_id ?>" 
+                   class="category-card <?= $category_id == $category->category_id ? 'active' : '' ?>">
+                    <div class="category-icon">
+                        <?php
+                        // Different icons for different categories
+                        $icons = ['📖', '🔬', '📚', '👶', '💻', '🎨', '🧠', '🌍', '📜', '⚡', '🎭', '🏛️'];
+                        $icon_index = $category->category_id % count($icons);
+                        echo $icons[$icon_index];
+                        ?>
+                    </div>
+                    <h3><?= encode($category->category_name) ?></h3>
+                    <?php
+                    // Count books in this category
+                    $count_stmt = $_db->prepare("SELECT COUNT(*) FROM book WHERE category_id = ?");
+                    $count_stmt->execute([$category->category_id]);
+                    $count = $count_stmt->fetchColumn();
+                    ?>
+                    <span class="book-count"><?= $count ?> book<?= $count > 1 ? 's' : '' ?></span>
+                </a>
+            <?php endforeach; ?>
+        </div>
+    </div>
 
-                <?php if ($book->photo): ?>
-                    <img src="/images/<?= encode($book->photo) ?>"
-                         alt="<?= encode($book->title) ?>">
-                <?php endif; ?>
-
-                <h3>
-                    <?= encode($book->title) ?>
-                </h3>
-
-                <p>
-                    Author: <?= encode($book->author) ?>
-                </p>
-
+    <!-- ===== BOOKS IN SELECTED CATEGORY ===== -->
+    <?php if ($category_id > 0): ?>
+        <div class="category-books-section">
+            <?php
+            // Get category name
+            $cat_stmt = $_db->prepare("SELECT category_name FROM category WHERE category_id = ?");
+            $cat_stmt->execute([$category_id]);
+            $cat = $cat_stmt->fetch();
+            ?>
+            <h2 class="section-title">
+                Books in "<?= encode($cat->category_name ?? 'Category') ?>"
+            </h2>
+            
+            <?php if (empty($books)): ?>
+                <div class="empty-state" style="text-align:center; padding:40px 20px;">
+                    <span style="font-size:40px;">📭</span>
+                    <p style="color:#8D6E63; margin-top:10px;">No books available in this category yet.</p>
+                </div>
+            <?php else: ?>
+                <div class="book-grid">
+                    <?php foreach ($books as $book): ?>
+                        <div class="book-card">
+                            <img src="/photo/<?= encode($book->photo ?: 'default.png') ?>" 
+                                 alt="<?= encode($book->title) ?>">
+                            <div class="book-info">
+                                <h3 class="book-title"><?= encode($book->title) ?></h3>
+                                <p class="book-author">by <?= encode($book->author) ?></p>
+                                <p class="book-stock <?= $book->available_quantity > 0 ? 'in-stock' : 'out-of-stock' ?>">
+                                    <?= $book->available_quantity > 0 ? '✅ In Stock' : '❌ Out of Stock' ?>
+                                </p>
+                            </div>
+                            <div class="book-actions">
+                                <a href="/customer/book_details.php?id=<?= $book->book_id ?>" class="btn-view">
+                                    View Details
+                                </a>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            <?php endif; ?>
+        </div>
+    <?php else: ?>
+        <!-- Show all books if no category selected -->
+        <?php
+        $all_books = $_db->query("
+            SELECT * FROM book ORDER BY title LIMIT 8
+        ")->fetchAll();
+        ?>
+        <?php if (!empty($all_books)): ?>
+            <div class="category-books-section">
+                <h2 class="section-title">📖 Featured Books</h2>
+                <div class="book-grid">
+                    <?php foreach ($all_books as $book): ?>
+                        <div class="book-card">
+                            <img src="/photo/<?= encode($book->photo ?: 'default.png') ?>" 
+                                 alt="<?= encode($book->title) ?>">
+                            <div class="book-info">
+                                <h3 class="book-title"><?= encode($book->title) ?></h3>
+                                <p class="book-author">by <?= encode($book->author) ?></p>
+                                <p class="book-stock <?= $book->available_quantity > 0 ? 'in-stock' : 'out-of-stock' ?>">
+                                    <?= $book->available_quantity > 0 ? '✅ In Stock' : '❌ Out of Stock' ?>
+                                </p>
+                            </div>
+                            <div class="book-actions">
+                                <a href="/customer/book_details.php?id=<?= $book->book_id ?>" class="btn-view">
+                                    View Details
+                                </a>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
             </div>
-
-        <?php endforeach; ?>
-
-    </section>
-
-<?php } ?>
+        <?php endif; ?>
+    <?php endif; ?>
 
 </main>
+
+<?php include '../footer.php'; ?>
