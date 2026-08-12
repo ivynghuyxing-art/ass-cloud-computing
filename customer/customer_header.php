@@ -34,9 +34,11 @@ $navCategories = $_db
 
 <body>
 
-    <div id="info">
-        <?= temp('info') ?>
-    </div>
+    <?php if ($info = temp('info')): ?>
+        <div id="info">
+            <?= $info ?>
+        </div>
+    <?php endif; ?>
 
 
     <header>
@@ -166,7 +168,3 @@ $navCategories = $_db
 
 
     <main>
-
-        <h1 class="page-title">
-            <?= $_title ?? 'Untitled' ?>
-        </h1>

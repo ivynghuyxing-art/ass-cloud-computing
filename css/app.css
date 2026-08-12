@@ -11,6 +11,12 @@ body.admin-layout {
     flex-direction: row;
 }
 
+main {
+    padding-left: 30px;
+    padding-right: 30px;
+    box-sizing: border-box;
+}
+
 .page-container {
     display:flex;
     max-width: 1100px;
