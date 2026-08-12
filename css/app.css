@@ -3454,22 +3454,6 @@ tbody tr:nth-child(even) {
     width:100%;
 }
 
-.btn-back-home{
-    text-align: right;
-}
-
-.btn-back-home a{
-     display:inline-block;
-    margin-right: auto;
-    text-decoration:none;
-    color:darkred;
-    font-size: 13px;
-}
-
-.btn-back-home a:hover{
-    border-bottom: 1px solid darkred;
-}
-
 .password-hint{
     margin-top:-2px;
     font-size:10px;
@@ -3988,24 +3972,15 @@ body.admin-layout {
 .btn-reset:hover {
     background: #D7CCC8;
 }
-
-.btn-back-home {
+.back-home {
     display: block;
-    width: 100%;
-    padding: 10px 20px;
-    background: transparent;
-    color: #6F4E37;
-    border: 1.5px solid #6F4E37;
-    border-radius: 8px;
-    font-size: 15px;
-    font-weight: 600;
+    text-align: right;
+    margin-top: 20px;
+    color: #555;
     text-decoration: none;
-    text-align: center;
-    transition: 0.3s;
-    box-sizing: border-box;
+    font-size: 14px;
 }
 
-.btn-back-home:hover {
-    background: #6F4E37;
-    color: white;
+.back-home:hover {
+    color: #000;
 }
