@@ -1,14 +1,14 @@
 <?php
 require_once '../_base.php';
-$title = 'New Arrivals';
+$title = 'Categories';
 $_title = '';
 include 'customer_header.php';
 ?>
 
-<main class="new-arrivals-page">
+<main class="category-page">
 
     <!-- ===== PAGE HEADER ===== -->
     <div class="page-header">
-        <h1>✨ New Arrivals</h1>
-        <p>Discover the latest books added to our collection</p>
+        <h1>📚 Categories</h1>
+        <p>Browse our collection by genre and find your next great read</p>
     </div>
