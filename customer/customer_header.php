@@ -33,9 +33,11 @@ $navCategories = $_db
 </head>
 <body>
 
-    <div id="info">
-        <?= temp('info') ?>
-    </div>
+    <?php if ($info = temp('info')): ?>
+        <div id="info">
+            <?= $info ?>
+        </div>
+    <?php endif; ?>
 
 
     <header>

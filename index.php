@@ -1,7 +1,6 @@
 <?php
 require '_base.php';
 
-$_title = "Home";
 include 'customer/customer_header.php';
 ?>
 
