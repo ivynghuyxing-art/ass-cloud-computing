@@ -131,8 +131,7 @@ $categories = $stm->fetchAll();
 
 <body>
 
-<div class="container">
-
+<div class="users-page">
 
     <!-- ==============================
          HEADER

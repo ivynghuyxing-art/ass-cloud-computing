@@ -22,20 +22,26 @@ if (is_post()) {
 
 ?>
 
-<div class="page-header">
-    <h2>Add Category</h2>
+<div class="container">
+    <div class="page-header">
+        <h1>Add Category</h1>
+    </div>
+
+    <?php if ($error = temp('error')): ?>
+        <p class="error"><?= encode($error) ?></p>
+    <?php endif; ?>
+
+    <div class="category-form">
+        <form method="post">
+            <input type="text" name="category_name" placeholder="Enter category name" required >
+
+            <button type="submit" class="save-button">Save</button>
+
+            <a href="admin_panel.php?page=category" class="cancel-button">Cancel</a>
+        </form>
+    </div>
+
 </div>
+</body>
 
-<?php if ($error = temp('error')): ?>
-    <p class="error"><?= encode($error) ?></p>
-<?php endif; ?>
-
-<div class="category-form">
-    <form method="post">
-        <input type="text" name="category_name" placeholder="Enter category name" required>
-
-        <button type="submit" class="save-button">Save</button>
-
-        <a href="admin_panel.php?page=category" class="cancel-button">← Back to Category</a>
-    </form>
-</div>
+</html>

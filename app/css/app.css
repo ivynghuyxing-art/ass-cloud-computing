@@ -2420,7 +2420,7 @@ label.upload img {
 }
 
 .styled-table th {
-  background: darkred;
+  background: #6F4E37;
   color: #fff;
   padding: 12px;
   text-align: left;
@@ -3131,7 +3131,7 @@ tbody tr:nth-child(even) {
 }
 
 .admin-table th {
-    background: #b30000;
+    background: #6F4E37;
     color: white;
     padding: 10px;
     text-align: left;
@@ -4692,10 +4692,11 @@ input {
 
 .add-button {
     padding: 10px 20px;
-    background: #8B0000;
+    background: #6F4E37;
     color: white;
     border: none;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .back-button {
@@ -4707,4 +4708,107 @@ input {
 .error,
 #categoryError {
     color: red;
+}
+
+/* =========================
+   Add Category
+========================= */
+
+.category-form {
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Title */
+.category-form h2 {
+    margin: 0 0 25px;
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Input */
+.category-form input[type="text"] {
+    width: 100%;
+    height: 45px;
+    padding: 0 14px;
+    margin-bottom: 20px;
+
+    border: 1px solid #d5d5d5;
+    border-radius: 6px;
+
+    font-size: 15px;
+    color: #333;
+    background-color: #fff;
+
+    outline: none;
+    transition: 0.2s ease;
+}
+
+.category-form input[type="text"]:focus {
+    border-color: #ad0808;
+    box-shadow: 0 0 0 3px rgba(173, 8, 8, 0.1);
+}
+
+/* Buttons */
+.category-form button,
+.category-form a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 44px;
+    padding: 0 20px;
+
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+
+    text-decoration: none;
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+/* Save */
+.save-button {
+    border: none;
+    background-color: #ad0808;
+    color: white;
+}
+
+.save-button:hover {
+    background-color: #8f0606;
+    transform: translateY(-1px);
+}
+
+/* Cancel */
+.cancel-button {
+    margin-left: 8px;
+    background-color: #f1f1f1;
+    color: #444;
+    border: 1px solid #ddd;
+}
+
+.cancel-button:hover {
+    background-color: #e5e5e5;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .category-form {
+        margin: 30px 15px;
+        padding: 25px;
+    }
+
+    .category-form button,
+    .category-form a {
+        width: 100%;
+        margin: 5px 0;
+    }
 }
