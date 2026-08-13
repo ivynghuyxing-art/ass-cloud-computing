@@ -91,10 +91,10 @@ $books = $stm->fetchAll();
 
                                     <?php if (!empty($book->book_photo)): ?>
 
-                                        <img
-                                            src="../book_photo/<?= encode($book->book_photo) ?>"
-                                            alt="<?= encode($book->title) ?>"
-                                            class="book-cover"
+                                       <img
+                                        src="/admin/book_photo/<?= encode($book->book_photo) ?>"
+                                        alt="<?= encode($book->title) ?>"
+                                        class="book-cover"
                                         >
 
                                     <?php else: ?>

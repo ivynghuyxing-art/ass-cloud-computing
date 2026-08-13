@@ -4661,3 +4661,362 @@ body.admin-layout {
         height: 160px;
     }
 }
+/* =========================================================
+   ADMIN BOOK MANAGEMENT - POLISHED STYLE
+========================================================= */
+
+/* PAGE */
+.books-page {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.books-page .page-header {
+    text-align: left;
+    margin-bottom: 28px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #e6d8cd;
+}
+
+.books-page .page-header h1 {
+    margin: 0 0 6px;
+    font-size: 34px;
+    color: #5d3d2b;
+    font-weight: 700;
+}
+
+.books-page .page-header .muted {
+    margin: 0;
+    color: #8c7565;
+    font-size: 16px;
+}
+
+
+/* CARD */
+.books-card {
+    background: #ffffff;
+    padding: 28px;
+    border-radius: 14px;
+    box-shadow: 0 5px 18px rgba(72, 49, 35, 0.08);
+}
+
+
+/* TOP BAR */
+.books-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.books-top h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #4f3324;
+}
+
+.add-book-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px 17px;
+    background: #7d563b;
+    color: white !important;
+
+    text-decoration: none !important;
+    border-radius: 7px;
+
+    font-weight: 600;
+    font-size: 14px;
+
+    transition: 0.2s ease;
+}
+
+.add-book-btn:hover {
+    background: #62422e;
+    transform: translateY(-1px);
+}
+
+
+/* TABLE WRAPPER */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 10px;
+    border: 1px solid #eadfd6;
+}
+
+
+/* TABLE */
+.book-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+}
+
+.book-table thead {
+    background: #795238;
+    color: #ffffff;
+}
+
+.book-table th {
+    padding: 14px 12px;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.book-table td {
+    padding: 16px 12px;
+    border-bottom: 1px solid #eee5de;
+    color: #49372b;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+.book-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.book-table tbody tr:hover {
+    background: #fbf7f3;
+}
+
+
+/* COLUMN WIDTHS */
+.book-table th:nth-child(1),
+.book-table td:nth-child(1) {
+    width: 55px;
+    text-align: center;
+}
+
+.book-table th:nth-child(2),
+.book-table td:nth-child(2) {
+    width: 110px;
+}
+
+.book-table th:nth-child(8),
+.book-table td:nth-child(8),
+.book-table th:nth-child(9),
+.book-table td:nth-child(9) {
+    text-align: center;
+}
+
+
+/* BOOK IMAGE */
+.book-cover {
+    width: 72px;
+    height: 96px;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+    border: 1px solid #e2d3c8;
+
+    background: #f6f1ed;
+    display: block;
+}
+
+.no-photo {
+    display: inline-block;
+    color: #9b8a7d;
+    font-size: 13px;
+}
+
+
+/* ACTION */
+.action-cell {
+    white-space: nowrap;
+}
+
+.action-cell .edit-btn,
+.action-cell .delete-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    min-width: 68px;
+    padding: 8px 13px;
+
+    border-radius: 7px;
+
+    color: white !important;
+    text-decoration: none !important;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    transition: 0.2s ease;
+}
+
+.action-cell .edit-btn {
+    background: #7d563b;
+    margin-right: 8px;
+}
+
+.action-cell .edit-btn:hover {
+    background: #62422e;
+    transform: translateY(-1px);
+}
+
+.action-cell .delete-btn {
+    background: #b3261e;
+}
+
+.action-cell .delete-btn:hover {
+    background: #8f1e18;
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   ADMIN MAIN AREA
+========================================================= */
+
+.main-content {
+    flex: 1;
+    padding: 40px 44px;
+    background: #f7f4f1;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   SIDEBAR SMALL POLISH
+========================================================= */
+
+.sidebar {
+    width: 250px;
+    padding: 30px 24px;
+}
+
+.sidebar h2 {
+    font-size: 27px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.sidebar .right {
+    margin-top: 25px;
+    gap: 12px;
+}
+
+.sidebar .right a {
+    padding: 13px 18px;
+}
+
+.sidebar .right a.active {
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .main-content {
+        padding: 28px;
+    }
+
+    .books-card {
+        padding: 20px;
+    }
+
+    .book-table {
+        min-width: 950px;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .books-top {
+        align-items: flex-start;
+        gap: 14px;
+        flex-direction: column;
+    }
+
+    .add-book-btn {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+/*==========================
+         USER
+===========================*/
+.users-card {
+    background: white;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.user-table thead {
+    background: #765239;
+    color: white;
+}
+
+.user-table th,
+.user-table td {
+    padding: 14px 12px;
+    text-align: left;
+    border-bottom: 1px solid #eee3da;
+}
+
+.user-table tbody tr:hover {
+    background: #faf6f2;
+}
+/* USER EDIT BUTTON */
+
+.edit-user-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #7d563b;
+    color: white !important;
+    text-decoration: none !important;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.edit-user-btn:hover {
+    background: #60422f;
+}
+
+
+/* EDIT USER PAGE */
+
+.edit-user-card {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+    background: white;
+    border-radius: 14px;
+    box-shadow: 0 5px 18px rgba(72, 49, 35, 0.08);
+}
+
+.edit-user-card .form-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.cancel-user-btn {
+    display: inline-block;
+    padding: 11px 20px;
+    background: #bbb;
+    color: #222 !important;
+    text-decoration: none !important;
+    border-radius: 7px;
+}

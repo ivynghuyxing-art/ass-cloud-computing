@@ -34,10 +34,19 @@ switch ($page) {
         require __DIR__ . '/modify.php';
         break;
 
+    case 'users':
+        require __DIR__ . '/users.php';
+        break;
+        
+    case 'edit_user':
+    require __DIR__ . '/edit_user.php';
+    break;
 
     default:
         require __DIR__ . '/profile.php';
         break;
+
+    
 }
 
 
