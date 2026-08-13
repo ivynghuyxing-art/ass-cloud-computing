@@ -32,7 +32,7 @@ $fetch_profile = $_SESSION['user'];
         href="../images/favicon.png"
     >
 
-  <link rel="stylesheet" href="../css/app.css">
+    <link rel="stylesheet" href="../css/app.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
@@ -42,6 +42,8 @@ $fetch_profile = $_SESSION['user'];
 
 
 <body class="admin-layout">
+
+    <div class="admin-body">
 
     <div class="sidebar">
 
@@ -81,6 +83,12 @@ $fetch_profile = $_SESSION['user'];
                 Add Book ➕
             </a>
 
+            <a
+                href="admin_panel.php?page=category"
+                class="<?= $page === 'category' ? 'active' : '' ?>"
+            >
+                Category ➕
+            </a>
 
             <!-- USERS -->
 
@@ -108,12 +116,13 @@ $fetch_profile = $_SESSION['user'];
 
 
     <div class="main-content">
+
         <?php $info = temp('info'); ?>
 
-<?php if (!empty($info)): ?>
+        <?php if (!empty($info)): ?>
 
-    <div id="info">
-        <?= encode($info) ?>
-    </div>
+            <div id="info">
+                <?= encode($info) ?>
+            </div>
 
-<?php endif; ?>
+        <?php endif; ?>

@@ -29,6 +29,9 @@ switch ($page) {
         require __DIR__ . '/add.php';
         break;
 
+    case 'category':
+        require __DIR__ . '/category.php';
+        break;  
 
     case 'modify':
         require __DIR__ . '/modify.php';
@@ -41,4 +44,4 @@ switch ($page) {
 }
 
 
-require __DIR__ . '/../footer.php';
+require __DIR__ . '/admin_footer.php';
