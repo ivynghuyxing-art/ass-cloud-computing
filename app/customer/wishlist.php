@@ -88,13 +88,12 @@ if (is_post() && post('action') === 'add_to_cart') {
                     </div>
                     
                     <div class="wishlist-actions">
-                        <a href="/customer/book_details.php?id=<?= $item->book_id ?>" class="btn-view">View Details</a>
+                        <a href="/customer/book_details.php?id=<?= $item->book_id ?>" class="btn-view">📖 View Details</a>
                         
                         <?php if ($item->available_quantity > 0): ?>
-                            <form method="post" style="width:100%;">
-                                <input type="hidden" name="action" value="add_to_cart">
+                            <form method="post" action="/customer/borrow.php" style="width:100%;">
                                 <input type="hidden" name="book_id" value="<?= $item->book_id ?>">
-                                <button type="submit" class="btn-cart">🛒 Add to Cart</button>
+                                <button type="submit" class="btn-borrow">✓ Borrow Now</button>
                             </form>
                         <?php endif; ?>
                         

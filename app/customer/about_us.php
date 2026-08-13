@@ -5,9 +5,7 @@ $_title = '';
 include 'customer_header.php';
 ?>
 
-<div class="title">
-    <h2>About Us</h2>
-</div>
+
 
 <section class="about-page">
 

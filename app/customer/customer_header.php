@@ -15,7 +15,7 @@ $navCategories = $_db
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title><?= $_title ?? 'Book Nest' ?></title>
+    <title><?= encode($title ?? 'Home') ?></title>
 
     <link
         rel="shortcut icon"
@@ -152,9 +152,11 @@ $navCategories = $_db
 
     <main>
 
-        <h1 class="page-title">
-            <?= $_title ?? 'Untitled' ?>
-        </h1>
+        <?php if (!empty($_title)): ?>
+            <h1 class="page-title">
+        <?= encode($_title) ?>
+            </h1>
+        <?php endif; ?>
 
             <script>
     document.addEventListener('DOMContentLoaded', function() {
