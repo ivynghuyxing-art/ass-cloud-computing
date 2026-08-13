@@ -187,7 +187,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $book_photo = save_photo(
             $f,
-            __DIR__ . '/../book_photo'
+            __DIR__ . '/book_photo'
         );
 
 
