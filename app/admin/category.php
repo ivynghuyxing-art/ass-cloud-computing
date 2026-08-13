@@ -142,85 +142,13 @@ $categories = $stm->fetchAll();
 
         <h2>Category Management</h2>
 
-        <button
-            type="button"
+        <a href="admin_panel.php?page=add_category"
             class="add-button"
-            onclick="showAddForm()"
         >
             + Add Category
-        </button>
+        </a>
 
     </div>
-
-
-    <!-- ==============================
-         MESSAGE
-    =============================== -->
-
-    <?php if ($msg = temp('info')): ?>
-
-        <p class="success">
-            <?= encode($msg) ?>
-        </p>
-
-    <?php endif; ?>
-
-
-    <?php if ($error = temp('error')): ?>
-
-        <p class="error">
-            <?= encode($error) ?>
-        </p>
-
-    <?php endif; ?>
-
-
-    <!-- ==============================
-         ADD FORM
-    =============================== -->
-
-    <div
-        id="addForm"
-        class="category-form"
-        style="display:none;"
-    >
-
-        <h3>Add Category</h3>
-
-        <form method="post">
-
-            <input
-                type="hidden"
-                name="action"
-                value="add"
-            >
-
-            <input
-                type="text"
-                name="category_name"
-                placeholder="Enter category name"
-                required
-            >
-
-            <button
-                type="submit"
-                class="save-button"
-            >
-                Save
-            </button>
-
-            <button
-                type="button"
-                class="cancel-button"
-                onclick="hideAddForm()"
-            >
-                Cancel
-            </button>
-
-        </form>
-
-    </div>
-
 
     <!-- ==============================
          CATEGORY TABLE

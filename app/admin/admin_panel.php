@@ -32,6 +32,10 @@ switch ($page) {
     case 'category':
         require __DIR__ . '/category.php';
         break;  
+        
+    case 'add_category':
+        require __DIR__ . '/add_category.php';
+        break;
 
     case 'modify':
         require __DIR__ . '/modify.php';
