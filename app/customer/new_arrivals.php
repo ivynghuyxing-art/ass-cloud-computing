@@ -14,7 +14,7 @@ $stmt = $_db->query("
         category_id,
         quantity,
         available_quantity,
-        photo
+        book_photo
     FROM book
     ORDER BY book_id DESC
 ");
@@ -40,7 +40,7 @@ $new_arrivals = $stmt->fetchAll();
         <div class="book-grid">
             <?php foreach ($new_arrivals as $book): ?>
                 <div class="book-card">
-                    <img src="/photo/<?= encode($book->photo ?: 'default.png') ?>" 
+                    <img src="/admin/book_photo/<?= encode($book->book_photo ?: 'default.png') ?>" 
                          alt="<?= encode($book->title) ?>">
                     
                     <div class="book-info">
@@ -68,10 +68,10 @@ $new_arrivals = $stmt->fetchAll();
                             View Details
                         </a>
                         <?php if ($book->available_quantity > 0): ?>
-                            <form method="post" action="/customer/cart_add.php" style="width:100%;">
+                            <form method="post" action="/customer/borrow.php" style="width:100%;">
                                 <input type="hidden" name="book_id" value="<?= $book->book_id ?>">
                                 <input type="hidden" name="quantity" value="1">
-                                <button type="submit" class="btn-cart">🛒 Add to Cart</button>
+                                <button type="submit" class="btn-cart">Borrow</button>
                             </form>
                         <?php endif; ?>
                     </div>

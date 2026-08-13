@@ -18,7 +18,7 @@ $stm = $_db->prepare("
         w.created_at,
         bk.title,
         bk.author,
-        bk.photo,
+        bk.book_photo,
         bk.available_quantity
     FROM wishlist w
     JOIN book bk ON w.book_id = bk.book_id
@@ -76,7 +76,7 @@ if (is_post() && post('action') === 'add_to_cart') {
         <div class="wishlist-grid">
             <?php foreach ($wishlist as $item): ?>
                 <div class="wishlist-card">
-                    <img src="/photo/<?= encode($item->photo ?: 'default.png') ?>" 
+                    <img src="/admin/book_photo/<?= encode($item->book_photo ?: 'default.png') ?>" 
                          alt="<?= encode($item->title) ?>">
                     
                     <div class="wishlist-info">

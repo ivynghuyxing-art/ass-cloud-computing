@@ -60,7 +60,17 @@ include 'customer/customer_header.php';
 
             <?php
             $stm = $_db->query(
-                "SELECT * FROM book ORDER BY book_id DESC LIMIT 4"
+                "SELECT 
+                    book_id,
+                    title,
+                    author,
+                    publisher,
+                    publish_year,
+                    category_id,
+                    quantity,
+                    available_quantity,
+                    book_photo
+                FROM book ORDER BY book_id DESC LIMIT 4"
             );
 
             $popular_books = $stm->fetchAll();
@@ -80,10 +90,7 @@ include 'customer/customer_header.php';
                     <div class="book-card">
 
                         <img
-                            src="<?= encode(
-                                $book->cover_image
-                                ?: '/images/placeholder.jpg'
-                            ) ?>"
+                            src="/admin/book_photo/<?= encode($book->book_photo ?: 'default.png') ?>"
                             alt="<?= encode($book->title) ?>"
                         >
 

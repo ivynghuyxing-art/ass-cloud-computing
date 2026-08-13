@@ -21,7 +21,7 @@ $stm = $_db->prepare("
         bk.book_id,
         bk.title,
         bk.author,
-        bk.photo
+        bk.book_photo
     FROM fine f
     JOIN borrowing b ON f.borrowing_id = b.borrowing_id
     JOIN book bk ON b.book_id = bk.book_id
@@ -103,7 +103,7 @@ if (is_post() && post('action') === 'pay') {
                         <tr>
                             <td>
                                 <div class="book-info">
-                                    <img src="/photo/<?= encode($fine->photo ?: 'default.png') ?>" 
+                                    <img src="/admin/book_photo/<?= encode($fine->book_photo ?: 'default.png') ?>" 
                                          alt="<?= encode($fine->title) ?>">
                                     <div>
                                         <div class="book-title"><?= encode($fine->title) ?></div>

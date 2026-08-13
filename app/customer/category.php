@@ -19,7 +19,13 @@ $categories = $_db->query("
 $books = [];
 if ($category_id > 0) {
     $stmt = $_db->prepare("
-        SELECT *
+        SELECT 
+            book_id,
+            title,
+            author,
+            category_id,
+            available_quantity,
+            book_photo
         FROM book
         WHERE category_id = ?
         ORDER BY title
@@ -87,7 +93,7 @@ if ($category_id > 0) {
                 <div class="book-grid">
                     <?php foreach ($books as $book): ?>
                         <div class="book-card">
-                            <img src="/photo/<?= encode($book->photo ?: 'default.png') ?>" 
+                            <img src="/admin/book_photo/<?= encode($book->book_photo ?: 'default.png') ?>" 
                                  alt="<?= encode($book->title) ?>">
                             <div class="book-info">
                                 <h3 class="book-title"><?= encode($book->title) ?></h3>
@@ -100,6 +106,13 @@ if ($category_id > 0) {
                                 <a href="/customer/book_details.php?id=<?= $book->book_id ?>" class="btn-view">
                                     View Details
                                 </a>
+                                <?php if ($book->available_quantity > 0): ?>
+                                    <form method="post" action="/customer/borrow.php" style="width:100%;">
+                                        <input type="hidden" name="book_id" value="<?= $book->book_id ?>">
+                                        <input type="hidden" name="quantity" value="1">
+                                        <button type="submit" class="btn-cart">Borrow</button>
+                                    </form>
+                                <?php endif; ?>
                             </div>
                         </div>
                     <?php endforeach; ?>
@@ -110,7 +123,13 @@ if ($category_id > 0) {
         <!-- Show all books if no category selected -->
         <?php
         $all_books = $_db->query("
-            SELECT * FROM book ORDER BY title LIMIT 8
+            SELECT 
+                book_id,
+                title,
+                author,
+                available_quantity,
+                book_photo
+            FROM book ORDER BY title LIMIT 8
         ")->fetchAll();
         ?>
         <?php if (!empty($all_books)): ?>
@@ -119,8 +138,9 @@ if ($category_id > 0) {
                 <div class="book-grid">
                     <?php foreach ($all_books as $book): ?>
                         <div class="book-card">
-                            <img src="/photo/<?= encode($book->photo ?: 'default.png') ?>" 
+                            <img src="/admin/book_photo/<?= encode($book->book_photo ?: 'default.png') ?>" 
                                  alt="<?= encode($book->title) ?>">
+                                 
                             <div class="book-info">
                                 <h3 class="book-title"><?= encode($book->title) ?></h3>
                                 <p class="book-author">by <?= encode($book->author) ?></p>
@@ -132,6 +152,13 @@ if ($category_id > 0) {
                                 <a href="/customer/book_details.php?id=<?= $book->book_id ?>" class="btn-view">
                                     View Details
                                 </a>
+                                <?php if ($book->available_quantity > 0): ?>
+                                    <form method="post" action="/customer/borrow.php" style="width:100%;">
+                                        <input type="hidden" name="book_id" value="<?= $book->book_id ?>">
+                                        <input type="hidden" name="quantity" value="1">
+                                        <button type="submit" class="btn-cart">Borrow</button>
+                                    </form>
+                                <?php endif; ?>
                             </div>
                         </div>
                     <?php endforeach; ?>
