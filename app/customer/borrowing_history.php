@@ -98,8 +98,8 @@ $records = $stm->fetchAll();
                             <td><?= htmlspecialchars($borrow_date) ?></td>
                             <td><?= htmlspecialchars($due_date) ?></td>
                             <td><?= htmlspecialchars($return_date) ?></td>
-                            <td>
-                                <span class="badge <?= $badge_class ?>">
+                            <td class="borrowing-status-cell">
+                                <span class="borrowing-status <?= $badge_class ?>">
                                     <?= $badge_text ?>
                                 </span>
                             </td>

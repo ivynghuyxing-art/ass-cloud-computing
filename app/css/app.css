@@ -6009,3 +6009,41 @@ body.admin-layout .category-page .container {
         font-size: 11px;
     }
 }
+/* ==============================
+   BORROWING STATUS
+============================== */
+
+.borrowing-status-cell {
+    vertical-align: middle;
+}
+
+.borrowing-status {
+    display: inline-block;
+    position: static;
+
+    padding: 7px 13px;
+    border-radius: 20px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+/* Returned */
+.borrowing-status.badge-returned {
+    background: #dcfce7;
+    color: #16803c;
+}
+
+/* Borrowed */
+.borrowing-status.badge-borrowed {
+    background: #fff3cd;
+    color: #996500;
+}
+
+/* Overdue */
+.borrowing-status.badge-overdue {
+    background: #fee2e2;
+    color: #b91c1c;
+}
