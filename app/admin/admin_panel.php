@@ -57,4 +57,3 @@ switch ($page) {
 }
 
 
-require __DIR__ . '/admin_footer.php';
