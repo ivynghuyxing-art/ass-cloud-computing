@@ -6,10 +6,6 @@ body {
     background-color: #FFFBF5;
 }
 
-/* Admin page layout - sidebar on left */
-body.admin-layout {
-    flex-direction: row;
-}
 
 main {
     padding-left: 30px;
@@ -1120,6 +1116,7 @@ label.upload img {
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
 }
 
 .sidebar h2 {
@@ -3480,9 +3477,12 @@ body.admin-layout {
     font-family: Arial, Helvetica, sans-serif;
     background: #f7f2ec;
     color: #3b2a20;
-    display: flex;
-    min-height: 100vh;
 }
+
+.admin-body {
+       display: flex;
+       min-height: 100vh;
+   }
 
 
 /* =========================
@@ -3805,7 +3805,7 @@ body.admin-layout {
 
 @media (max-width: 850px) {
 
-    body.admin-layout {
+    admin-body {
         display: block;
     }
 
@@ -4660,6 +4660,53 @@ body.admin-layout {
     .book-card img {
         height: 160px;
     }
+}
+
+.container {
+    width: 500px;
+    margin: 50px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+}
+
+h2 {
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.add-button {
+    padding: 10px 20px;
+    background: #8B0000;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.back-button {
+    margin-left: 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+.error,
+#categoryError {
+    color: red;
 }
 /* =========================================================
    ADMIN BOOK MANAGEMENT - POLISHED STYLE
