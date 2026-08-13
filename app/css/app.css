@@ -2801,7 +2801,7 @@ body.admin-layout {
 }
 
 .styled-table th {
-  background: darkred;
+  background: #6F4E37;
   color: #fff;
   padding: 12px;
   text-align: left;
@@ -3512,7 +3512,7 @@ tbody tr:nth-child(even) {
 }
 
 .admin-table th {
-    background: #b30000;
+    background: #6F4E37;
     color: white;
     padding: 10px;
     text-align: left;
@@ -5062,10 +5062,11 @@ input {
 
 .add-button {
     padding: 10px 20px;
-    background: #8B0000;
+    background: #6F4E37;
     color: white;
     border: none;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .back-button {
@@ -5078,12 +5079,12 @@ input {
 #categoryError {
     color: red;
 }
-/* =========================================================
-   ADMIN BOOK MANAGEMENT - POLISHED STYLE
-========================================================= */
 
-/* PAGE */
-.books-page {
+/* =========================
+   Add Category
+========================= */
+
+.category-form {
     width: 100%;
     max-width: 1300px;
     padding: 0 40px;
@@ -5114,169 +5115,70 @@ input {
 /* CARD */
 .books-card {
     background: #ffffff;
-    padding: 28px;
-    border-radius: 14px;
-    box-shadow: 0 5px 18px rgba(72, 49, 35, 0.08);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
-
-/* TOP BAR */
-.books-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.books-top h2 {
-    margin: 0;
+/* Title */
+.category-form h2 {
+    margin: 0 0 25px;
+    text-align: center;
     font-size: 24px;
-    color: #4f3324;
+    color: #333;
 }
 
-.add-book-btn {
+/* Input */
+.category-form input[type="text"] {
+    width: 100%;
+    height: 45px;
+    padding: 0 14px;
+    margin-bottom: 20px;
+
+    border: 1px solid #d5d5d5;
+    border-radius: 6px;
+
+    font-size: 15px;
+    color: #333;
+    background-color: #fff;
+
+    outline: none;
+    transition: 0.2s ease;
+}
+
+.category-form input[type="text"]:focus {
+    border-color: #ad0808;
+    box-shadow: 0 0 0 3px rgba(173, 8, 8, 0.1);
+}
+
+/* Buttons */
+.category-form button,
+.category-form a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
 
-    padding: 10px 17px;
-    background: #7d563b;
-    color: white !important;
+    height: 44px;
+    padding: 0 20px;
 
-    text-decoration: none !important;
-    border-radius: 7px;
-
+    border-radius: 6px;
+    font-size: 14px;
     font-weight: 600;
-    font-size: 14px;
+
+    text-decoration: none;
+    cursor: pointer;
 
     transition: 0.2s ease;
 }
 
-.add-book-btn:hover {
-    background: #62422e;
-    transform: translateY(-1px);
+/* Save */
+.save-button {
+    border: none;
+    background-color: #ad0808;
+    color: white;
 }
 
-
-/* TABLE WRAPPER */
-.table-wrapper {
-    width: 100%;
-    overflow-x: auto;
-    border-radius: 10px;
-    border: 1px solid #eadfd6;
-}
-
-
-/* TABLE */
-.book-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: #ffffff;
-}
-
-.book-table thead {
-    background: #795238;
-    color: #ffffff;
-}
-
-.book-table th {
-    padding: 14px 12px;
-    text-align: left;
-    font-size: 14px;
-    font-weight: 700;
-    white-space: nowrap;
-}
-
-.book-table td {
-    padding: 16px 12px;
-    border-bottom: 1px solid #eee5de;
-    color: #49372b;
-    font-size: 14px;
-    vertical-align: middle;
-}
-
-.book-table tbody tr:last-child td {
-    border-bottom: none;
-}
-
-.book-table tbody tr:hover {
-    background: #fbf7f3;
-}
-
-
-/* COLUMN WIDTHS */
-.book-table th:nth-child(1),
-.book-table td:nth-child(1) {
-    width: 55px;
-    text-align: center;
-}
-
-.book-table th:nth-child(2),
-.book-table td:nth-child(2) {
-    width: 110px;
-}
-
-.book-table th:nth-child(8),
-.book-table td:nth-child(8),
-.book-table th:nth-child(9),
-.book-table td:nth-child(9) {
-    text-align: center;
-}
-
-
-/* BOOK IMAGE */
-.book-cover {
-    width: 72px;
-    height: 96px;
-
-    object-fit: cover;
-
-    border-radius: 8px;
-    border: 1px solid #e2d3c8;
-
-    background: #f6f1ed;
-    display: block;
-}
-
-.no-photo {
-    display: inline-block;
-    color: #9b8a7d;
-    font-size: 13px;
-}
-
-
-/* ACTION */
-.action-cell {
-    white-space: nowrap;
-}
-
-.action-cell .edit-btn,
-.action-cell .delete-btn {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-
-    min-width: 68px;
-    padding: 8px 13px;
-
-    border-radius: 7px;
-
-    color: white !important;
-    text-decoration: none !important;
-
-    font-size: 13px;
-    font-weight: 700;
-
-    transition: 0.2s ease;
-}
-
-.action-cell .edit-btn {
-    background: #7d563b;
-    margin-right: 8px;
-}
-
-.action-cell .edit-btn:hover {
-    background: #62422e;
+.save-button:hover {
+    background-color: #8f0606;
     transform: translateY(-1px);
 }
 
