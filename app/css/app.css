@@ -5479,33 +5479,7 @@ input {
     box-sizing: border-box;
 }
 
-.books-page .page-header {
-    text-align: left;
-    margin-bottom: 28px;
-    padding-bottom: 18px;
-    border-bottom: 1px solid #e6d8cd;
-}
 
-.books-page .page-header h1 {
-    margin: 0 0 6px;
-    font-size: 34px;
-    color: #5d3d2b;
-    font-weight: 700;
-}
-
-.books-page .page-header .muted {
-    margin: 0;
-    color: #8c7565;
-    font-size: 16px;
-}
-
-
-/* CARD */
-.books-card {
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-}
 
 /* Title */
 .category-form h2 {
@@ -5570,14 +5544,7 @@ input {
     transform: translateY(-1px);
 }
 
-.action-cell .delete-btn {
-    background: #b3261e;
-}
 
-.action-cell .delete-btn:hover {
-    background: #8f1e18;
-    transform: translateY(-1px);
-}
 
 
 /* =========================================================
@@ -5753,14 +5720,7 @@ input {
 }
 
 
-/* =========================================
-   BOOK MANAGEMENT
-========================================= */
 
-.books-card {
-    width: 100%;
-    box-sizing: border-box;
-}
 
 
 /* =========================================
@@ -6472,4 +6432,214 @@ body.admin-layout .category-page .container {
 .borrowing-status.badge-overdue {
     background: #fee2e2;
     color: #b91c1c;
+}
+/* =========================================================
+   ADMIN - BOOK MANAGEMENT
+   ========================================================= */
+
+.books-page {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* PAGE HEADER */
+
+.books-page .page-header {
+    text-align: left;
+    margin-bottom: 28px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #dfd2c6;
+}
+
+.books-page .page-header h1 {
+    margin: 0 0 6px;
+    font-size: 32px;
+    color: #5c3824;
+    font-weight: 700;
+}
+
+.books-page .page-header .muted {
+    margin: 0;
+    font-size: 16px;
+    color: #8a6b57;
+}
+
+
+/* CARD */
+
+.books-card {
+    width: 100%;
+    box-sizing: border-box;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+
+/* BOOK LIST TOP */
+
+.books-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.books-top h2 {
+    margin: 0;
+    font-size: 25px;
+    color: #4f3425;
+}
+
+
+/* ADD BOOK */
+
+.add-book-btn {
+    display: inline-block;
+    padding: 10px 18px;
+    background: #7b5439;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.add-book-btn:hover {
+    background: #5f3e2b;
+    transform: translateY(-1px);
+}
+
+
+/* TABLE */
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 10px;
+}
+
+.book-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    font-size: 14px;
+}
+
+.book-table thead {
+    background: #7b5439;
+    color: white;
+}
+
+.book-table th {
+    padding: 14px 12px;
+    text-align: left;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.book-table td {
+    padding: 14px 12px;
+    vertical-align: middle;
+    border-bottom: 1px solid #eee5df;
+}
+
+.book-table tbody tr:hover {
+    background: #faf5f1;
+}
+
+
+/* BOOK PHOTO */
+
+.book-cover {
+    width: 80px;
+    height: 110px;
+    object-fit: cover;
+    display: block;
+    border-radius: 7px;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.12);
+}
+
+.no-photo {
+    color: #999;
+    font-size: 13px;
+}
+
+
+/* ACTION */
+
+.action-cell {
+    white-space: nowrap;
+}
+
+.edit-btn,
+.delete-btn {
+    display: inline-block;
+    padding: 7px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.edit-btn {
+    background: #ead8c8;
+    color: #5c3824;
+    margin-right: 6px;
+}
+
+.edit-btn:hover {
+    background: #d7bba4;
+}
+
+.delete-btn {
+    background: #f3d5d5;
+    color: #a00000;
+}
+
+.delete-btn:hover {
+    background: #e8b7b7;
+}
+
+
+/* ALIGNMENT */
+
+.book-table th:nth-child(8),
+.book-table td:nth-child(8),
+.book-table th:nth-child(9),
+.book-table td:nth-child(9) {
+    text-align: center;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 1000px) {
+
+    .books-card {
+        padding: 20px;
+    }
+
+    .book-table {
+        min-width: 950px;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .books-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+    }
+
+    .add-book-btn {
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+    }
 }
