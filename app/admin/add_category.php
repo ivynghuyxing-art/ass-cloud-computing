@@ -22,7 +22,7 @@ if (is_post()) {
 
 ?>
 
-<div class="container">
+<div class="add-category-page">
     <div class="page-header">
         <h1>Add Category</h1>
     </div>
@@ -34,10 +34,14 @@ if (is_post()) {
     <div class="category-form">
         <form method="post">
             <input type="text" name="category_name" placeholder="Enter category name" required >
+        
+                <div class="category-form-actions">
+                    <button type="submit" class="save-button">Save</button>
 
-            <button type="submit" class="save-button">Save</button>
-
-            <a href="admin_panel.php?page=category" class="cancel-button">Cancel</a>
+                    <a href="admin_panel.php?page=category" class="cancel-button">
+                        Cancel
+                    </a>
+                </div>
         </form>
     </div>
 

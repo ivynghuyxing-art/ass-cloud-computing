@@ -5474,11 +5474,16 @@ input {
 
 .category-form {
     width: 100%;
-    max-width: 1300px;
-    padding: 0 40px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+.category-card {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 30px;
     box-sizing: border-box;
 }
-
 .books-page .page-header {
     text-align: left;
     margin-bottom: 28px;
@@ -5561,12 +5566,12 @@ input {
 /* Save */
 .save-button {
     border: none;
-    background-color: #ad0808;
+    background-color:#6F4E37;
     color: white;
 }
 
 .save-button:hover {
-    background-color: #8f0606;
+    background-color:  #60422f;
     transform: translateY(-1px);
 }
 
@@ -5701,6 +5706,7 @@ input {
     border-radius: 7px;
     font-size: 14px;
     font-weight: 600;
+    border:none;
 }
 
 .edit-user-btn:hover {
@@ -6473,3 +6479,155 @@ body.admin-layout .category-page .container {
     background: #fee2e2;
     color: #b91c1c;
 }
+.add-book-card {
+    background: white;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+
+    width: 100%;
+    max-width: 850px;
+    box-sizing: border-box;
+}
+
+/* =========================================
+   CATEGORY MANAGEMENT
+========================================= */
+
+.category-management-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    text-align: left !important;
+    margin-bottom: 28px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #e6d8cd;
+}
+
+.category-management-header h1 {
+    margin: 0 0 6px;
+    font-size: 34px;
+    color: #5d3d2b;
+}
+
+.category-management-header .muted {
+    margin: 0;
+    color: #8c7565;
+    font-size: 16px;
+}
+
+
+/* ADD CATEGORY */
+
+.add-category-btn {
+    display: inline-block;
+
+    padding: 10px 18px;
+
+    background: #7d563b;
+    color: white;
+
+    border-radius: 7px;
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.add-category-btn:hover {
+    background: #60422f;
+}
+
+
+/* ACTION */
+
+.category-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.category-actions form {
+    margin: 0;
+}
+
+
+/* DELETE */
+
+.delete-category-btn {
+    padding: 8px 16px;
+
+    background: #eee5df;
+    color: #6b4532;
+
+    border: none;
+    border-radius: 7px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.delete-category-btn:hover {
+    background: #dccbc0;
+}
+
+
+/* INLINE EDIT */
+
+.category-edit-form {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.category-edit-form input[type="text"] {
+    width: 220px;
+    padding: 8px 10px;
+    border: 1px solid #d7c5b8;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+.save-category-btn,
+.cancel-category-btn {
+    padding: 8px 12px;
+
+    border: none;
+    border-radius: 6px;
+
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.save-category-btn {
+    background: #7d563b;
+    color: white;
+}
+
+.cancel-category-btn {
+    background: #eee5df;
+    color: #5d3d2b;
+}
+
+body.admin-layout .add-category-page {
+    width: 100%;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 35px 40px;
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
+}
+
+.category-form-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
