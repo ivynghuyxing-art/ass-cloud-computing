@@ -150,13 +150,17 @@ $navCategories = $_db
     </nav>
 
 
-    <main>
+   <main>
+
+    <?php if (empty($hidePageTitle)): ?>
 
         <?php if (!empty($_title)): ?>
             <h1 class="page-title">
         <?= encode($_title) ?>
             </h1>
         <?php endif; ?>
+
+    <?php endif; ?>
 
             <script>
     document.addEventListener('DOMContentLoaded', function() {
