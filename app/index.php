@@ -89,10 +89,12 @@ include 'customer/customer_header.php';
 
                     <div class="book-card">
 
+                     <a href="/customer/book_details.php?id=<?= $book->book_id ?>">
                         <img
                             src="/admin/book_photo/<?= encode($book->book_photo ?: 'default.png') ?>"
                             alt="<?= encode($book->title) ?>"
                         >
+                </a>
 
                         <div class="info">
 

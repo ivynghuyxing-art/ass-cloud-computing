@@ -93,8 +93,9 @@ if ($category_id > 0) {
                 <div class="book-grid">
                     <?php foreach ($books as $book): ?>
                         <div class="book-card">
-                            <img src="/admin/book_photo/<?= encode($book->book_photo ?: 'default.png') ?>" 
-                                 alt="<?= encode($book->title) ?>">
+                                <img src="/admin/book_photo/<?= encode($book->book_photo ?: 'default.png') ?>" 
+                                     alt="<?= encode($book->title) ?>">
+                           
                             <div class="book-info">
                                 <h3 class="book-title"><?= encode($book->title) ?></h3>
                                 <p class="book-author">by <?= encode($book->author) ?></p>
@@ -138,8 +139,10 @@ if ($category_id > 0) {
                 <div class="book-grid">
                     <?php foreach ($all_books as $book): ?>
                         <div class="book-card">
-                            <img src="/admin/book_photo/<?= encode($book->book_photo ?: 'default.png') ?>" 
-                                 alt="<?= encode($book->title) ?>">
+                              <a href="/customer/book_details.php?id=<?= $book->book_id ?>">
+                                <img src="/admin/book_photo/<?= encode($book->book_photo ?: 'default.png') ?>" 
+                                    alt="<?= encode($book->title) ?>">
+                            </a>
                                  
                             <div class="book-info">
                                 <h3 class="book-title"><?= encode($book->title) ?></h3>

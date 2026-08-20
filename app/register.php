@@ -16,6 +16,9 @@ if(is_post()){
     } else if(!is_unique($name, 'user', 'name')){
         $_err['name'] = 'Username already exists';
     }
+    elseif (!preg_match('/^[A-Za-z]+$/', $username)) {
+    $_err['username'] = 'Username can only contain letters';
+}
  
     // Validate email
     if(!$email){

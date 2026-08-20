@@ -50,6 +50,7 @@ if ($_user) {
     $in_wishlist = $wish_stmt->fetchColumn() > 0;
 }
 
+
 // Handle wishlist add/remove
 if (is_post() && $_user) {
     $action = post('action');
@@ -60,6 +61,10 @@ if (is_post() && $_user) {
         ");
         $insert_stmt->execute([$_user->user_id, $book_id, time()]);
         $in_wishlist = true;
+
+        temp('info','Book added to wishlist successfull!');
+        redirect('/customer/book_details.php?id=' . $book_id);
+
     } elseif ($action === 'remove_wishlist') {
         $delete_stmt = $_db->prepare("
             DELETE FROM wishlist WHERE user_id = ? AND book_id = ?
@@ -67,6 +72,8 @@ if (is_post() && $_user) {
         $delete_stmt->execute([$_user->user_id, $book_id]);
         $in_wishlist = false;
     }
+     temp('info','Book removed from wishlist successfull!');
+    redirect('/customer/book_details.php?id=' . $book_id);
 }
 ?>
 
@@ -145,12 +152,12 @@ if (is_post() && $_user) {
                         <form method="post" action="borrow.php">
                             <input type="hidden" name="book_id" value="<?= $book->book_id ?>">
                             <button type="submit" class="btn-borrow">
-                                🎁 Borrow This Book
+                                📖 Borrow This Book
                             </button>
                         </form>
                     <?php else: ?>
                         <a href="/login.php" class="btn-borrow">
-                            🎁 Login to Borrow
+                            👤 Login to Borrow
                         </a>
                     <?php endif; ?>
                 <?php elseif ($user_borrowed): ?>
@@ -158,14 +165,16 @@ if (is_post() && $_user) {
                         ✓ You're currently borrowing this book
                     </div>
                 <?php else: ?>
-                    <div class="btn-unavailable">
+                    <div class="btn-borrow">
                         ✗ This book is currently unavailable
                     </div>
                 <?php endif; ?>
 
+
+
                 <!-- Wishlist Button -->
                 <?php if ($_user): ?>
-                    <form method="post" style="display: inline;">
+                    <form method="post" >
                         <input type="hidden" name="action" value="<?= $in_wishlist ? 'remove_wishlist' : 'add_wishlist' ?>">
                         <button type="submit" class="btn-wishlist <?= $in_wishlist ? 'active' : '' ?>">
                             <?= $in_wishlist ? '❤️ Remove from Wishlist' : '🤍 Add to Wishlist' ?>
@@ -177,7 +186,10 @@ if (is_post() && $_user) {
                     </a>
                 <?php endif; ?>
 
-            </div>
+               
+                    <a href="javascript:history.back()" class="btn-back">
+                        ← Go back
+                    </a>
 
         </div>
 
@@ -202,12 +214,7 @@ if (is_post() && $_user) {
         </div>
     </div>
 
-    <!-- ===== BACK BUTTON ===== -->
-    <div class="book-detail-footer">
-        <a href="javascript:history.back()" class="btn-back">
-            ← Go Back
-        </a>
-    </div>
+
 
 </main>
 

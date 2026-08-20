@@ -40,9 +40,10 @@ $new_arrivals = $stmt->fetchAll();
         <div class="book-grid">
             <?php foreach ($new_arrivals as $book): ?>
                 <div class="book-card">
-                    <img src="/admin/book_photo/<?= encode($book->book_photo ?: 'default.png') ?>" 
-                         alt="<?= encode($book->title) ?>">
-                    
+                    <a href="/customer/book_details.php?id=<?= $book->book_id ?>">
+                        <img src="/admin/book_photo/<?= encode($book->book_photo ?: 'default.png') ?>" 
+                             alt="<?= encode($book->title) ?>">
+                    </a>
                     <div class="book-info">
                         <h3 class="book-title"><?= encode($book->title) ?></h3>
                         <p class="book-author">by <?= encode($book->author) ?></p>
@@ -64,7 +65,7 @@ $new_arrivals = $stmt->fetchAll();
                     </div>
                     
                     <div class="book-actions">
-                        <a href="/customer/book_details.php?id=<?= $book->book_id ?>" class="btn-view">
+                        <a href="/customer/book_details.php" class="btn-view">
                             View Details
                         </a>
                         <?php if ($book->available_quantity > 0): ?>
