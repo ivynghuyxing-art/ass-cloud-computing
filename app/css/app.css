@@ -5575,14 +5575,7 @@ input {
     transform: translateY(-1px);
 }
 
-.action-cell .delete-btn {
-    background: #b3261e;
-}
 
-.action-cell .delete-btn:hover {
-    background: #8f1e18;
-    transform: translateY(-1px);
-}
 
 
 /* =========================================================
@@ -5759,14 +5752,7 @@ input {
 }
 
 
-/* =========================================
-   BOOK MANAGEMENT
-========================================= */
 
-.books-card {
-    width: 100%;
-    box-sizing: border-box;
-}
 
 
 /* =========================================
