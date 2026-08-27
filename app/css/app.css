@@ -2,7 +2,7 @@ body {
     margin: 0;
     min-height: 100vh;
     display: grid;
-    grid: auto auto 1fr auto / auto;
+    grid-template-rows: auto auto 1fr auto;
     background-color: #FFFBF5;
 }
 
@@ -45,7 +45,7 @@ header a {
 }
 
 footer {
-    margin-top: 80px;
+    margin-top: 0;
     padding: 40px 50px;
     background-color: #6F4E37;
     color: white;
@@ -592,22 +592,6 @@ label.upload img {
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border: 0;
-}
-
-@media (max-width: 780px) {
-    .page-intro--header {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .category-filter {
-        width: 100%;
-        justify-content: flex-start;
-    }
-
-    .category-filter select {
-        width: 100%;
-    }
 }
 
 .category-filter label {
@@ -1659,58 +1643,14 @@ body.admin-layout {
     background: #62432f;
 }
 
-
-/* =========================================================
-   RESPONSIVE
-========================================================= */
-
-@media (max-width: 1000px) {
-
-    .main-content {
-        padding: 30px;
-    }
-
-    .profile-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .profile-card {
-        max-width: 480px;
-        width: 100%;
-        margin: 0 auto;
-    }
-}
-
-
-@media (max-width: 700px) {
-
-    .sidebar {
-        width: 190px;
-    }
-
-    .main-content {
-        padding: 22px;
-    }
-
-    .profile-form {
-        padding: 24px;
-    }
-
-    .profile-form .form-actions {
-        flex-direction: column;
-    }
-
-    .profile-form .form-actions button {
-        width: 100%;
-    }
-}
-
 .metric-card:hover {
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
     transform: translateY(-3px);
 }
 
-.metric-card-wide { grid-column: span 1; }
+.metric-card-wide { 
+    grid-column: span 1; 
+}
 
 .metric-label {
     color: #7f8c8d;
@@ -4274,31 +4214,6 @@ tbody tr:nth-child(even) {
     font-weight: 600;
 }
 
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media (max-width: 850px) {
-
-    admin-body {
-        display: block;
-    }
-
-    .sidebar {
-        width: 100%;
-        min-height: auto;
-    }
-
-    .profile-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .main-content {
-        padding: 25px;
-    }
-}
-
 /* ===== Hero Banner ===== */
 .hero-banner {
     background: linear-gradient(135deg, #5D4037, #8D6E63);
@@ -4667,56 +4582,12 @@ tbody tr:nth-child(even) {
     margin: 0;
 }
 
-/* ===== Responsive ===== */
-@media (max-width: 768px) {
-    .fines-stats {
-        grid-template-columns: 1fr 1fr;
-    }
-    
-    .fines-table {
-        font-size: 13px;
-    }
-    
-    .fines-table th,
-    .fines-table td {
-        padding: 10px 12px;
-    }
-}
-
-@media (max-width: 600px) {
-    .fines-stats {
-        grid-template-columns: 1fr;
-    }
-    
-    .fines-table thead {
-        display: none;
-    }
-    
-    .fines-table tbody tr {
-        display: block;
-        padding: 16px;
-        border-bottom: 2px solid #EFEBE6;
-    }
-    
-    .fines-table td {
-        display: flex;
-        justify-content: space-between;
-        padding: 6px 0;
-        border-bottom: none;
-    }
-    
-    .fines-table td:before {
-        content: attr(data-label);
-        font-weight: 600;
-        color: #6D4C41;
-    }
-}
-
 /* ===== Category Page ===== */
 .category-page {
     width: 100%;
     max-width: 1200px;
-    padding: 40px 40px;
+    margin: 0 auto;
+    padding: 20px 20px 60px;
     box-sizing: border-box;
 }
 
@@ -4893,42 +4764,6 @@ tbody tr:nth-child(even) {
 .empty-state p {
     color: #8D6E63;
     margin-top: 10px;
-}
-
-/* ===== Responsive ===== */
-@media (max-width: 992px) {
-    .category-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    .book-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .category-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .book-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .page-header h1 {
-        font-size: 28px;
-    }
-}
-
-@media (max-width: 480px) {
-    .category-grid {
-        grid-template-columns: 1fr;
-    }
-    .book-grid {
-        grid-template-columns: 1fr;
-        max-width: 320px;
-        margin: 0 auto;
-    }
-    .category-card {
-        padding: 20px 16px;
-    }
 }
 
 /* ===== New Arrivals Page ===== */
@@ -5108,35 +4943,6 @@ tbody tr:nth-child(even) {
     font-size: 16px;
     color: #8D6E63;
     margin: 0;
-}
-
-/* ===== Responsive ===== */
-@media (max-width: 992px) {
-    .book-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .book-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .page-header h1 {
-        font-size: 28px;
-    }
-}
-
-@media (max-width: 480px) {
-    .book-grid {
-        grid-template-columns: 1fr;
-        max-width: 320px;
-        margin: 0 auto;
-    }
-    
-    .book-card img {
-        height: 160px;
-    }
 }
 
 .container {
@@ -5411,37 +5217,6 @@ label {
     gap: 4px;
 }
 
-/* ===== CATALOG RESPONSIVE ===== */
-@media (max-width: 768px) {
-    .search-form {
-        flex-direction: column;
-    }
-
-    .search-input,
-    .category-filter,
-    .btn-search,
-    .btn-clear {
-        width: 100%;
-    }
-
-    .book-grid {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        gap: 15px;
-    }
-
-    .book-card img {
-        height: 180px;
-    }
-
-    .book-title {
-        font-size: 12px;
-    }
-
-    .book-author {
-        font-size: 10px;
-    }
-}
-
 input {
     width: 100%;
     padding: 10px;
@@ -5593,40 +5368,6 @@ input {
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
 }
 
-
-/* =========================================================
-   RESPONSIVE
-========================================================= */
-
-@media (max-width: 1000px) {
-
-    .main-content {
-        padding: 28px;
-    }
-
-    .books-card {
-        padding: 20px;
-    }
-
-    .book-table {
-        min-width: 950px;
-    }
-}
-
-@media (max-width: 700px) {
-
-    .books-top {
-        align-items: flex-start;
-        gap: 14px;
-        flex-direction: column;
-    }
-
-    .add-book-btn {
-        width: 100%;
-        box-sizing: border-box;
-    }
-}
-
 /*==========================
          USER
 ===========================*/
@@ -5760,26 +5501,6 @@ body.admin-layout .category-page .container {
     box-sizing: border-box;
 }
 
-
-/* =========================================
-   RESPONSIVE
-========================================= */
-
-@media (max-width: 1000px) {
-    .main-content {
-        padding: 28px;
-    }
-
-    .profile-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 700px) {
-    .main-content {
-        padding: 20px;
-    }
-}
 
 /* ===== BOOK DETAILS PAGE ===== */
 .book-details-page {
@@ -6071,37 +5792,6 @@ body.admin-layout .category-page .container {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-    .book-details-container {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        padding: 20px;
-    }
-
-    .book-cover-section {
-        min-height: 300px;
-    }
-
-    .book-cover-image {
-        max-height: 350px;
-    }
-
-    .book-detail-title {
-        font-size: 22px;
-    }
-
-    
-    .book-statistics {
-        grid-template-columns: 1fr;
-    }
-
-    .book-detail-meta {
-        grid-template-columns: 1fr;
-    }
-}
-
 /* ===== BORROWING HISTORY PAGE ===== */
 .borrowing-page {
     max-width: 1200px;
@@ -6304,97 +5994,6 @@ body.admin-layout .category-page .container {
     font-size: 14px;
 }
 
-/* ===== BORROWING HISTORY RESPONSIVE ===== */
-@media (max-width: 1024px) {
-    .borrowing-table th:nth-child(1),
-    .borrowing-table td:nth-child(1) {
-        width: 30%;
-    }
-
-    .borrowing-table th:nth-child(2),
-    .borrowing-table td:nth-child(2) {
-        width: 14%;
-    }
-
-    .borrowing-table th:nth-child(3),
-    .borrowing-table td:nth-child(3) {
-        width: 14%;
-    }
-
-    .borrowing-table th:nth-child(4),
-    .borrowing-table td:nth-child(4) {
-        width: 14%;
-    }
-
-    .borrowing-table th:nth-child(5),
-    .borrowing-table td:nth-child(5) {
-        width: 14%;
-    }
-
-    .borrowing-table th:nth-child(6),
-    .borrowing-table td:nth-child(6) {
-        width: 14%;
-    }
-}
-
-@media (max-width: 768px) {
-    .borrowing-table {
-        font-size: 12px;
-    }
-
-    .borrowing-table th,
-    .borrowing-table td {
-        padding: 12px 8px;
-    }
-
-    .borrowing-table th:nth-child(1),
-    .borrowing-table td:nth-child(1) {
-        width: 35%;
-    }
-
-    .borrowing-table th:nth-child(2),
-    .borrowing-table td:nth-child(2) {
-        width: 13%;
-    }
-
-    .borrowing-table th:nth-child(3),
-    .borrowing-table td:nth-child(3) {
-        width: 13%;
-    }
-
-    .borrowing-table th:nth-child(4),
-    .borrowing-table td:nth-child(4) {
-        width: 13%;
-    }
-
-    .borrowing-table th:nth-child(5),
-    .borrowing-table td:nth-child(5) {
-        width: 13%;
-    }
-
-    .borrowing-table th:nth-child(6),
-    .borrowing-table td:nth-child(6) {
-        width: 13%;
-    }
-
-    .borrowing-book-thumb {
-        width: 40px;
-        height: 60px;
-    }
-
-    .borrowing-title {
-        font-size: 12px;
-    }
-
-    .borrowing-author {
-        font-size: 11px;
-    }
-
-    .badge {
-        padding: 4px 8px;
-        font-size: 11px;
-    }
-}
 /* ==============================
    BORROWING STATUS
 ============================== */
@@ -6616,9 +6215,196 @@ body.admin-layout .category-page .container {
 }
 
 
-/* RESPONSIVE */
+/* ===== CATEGORY ACTION BUTTONS ===== */
+
+.category-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.category-actions form {
+    margin: 0;
+    display: inline-block;
+}
+
+
+/* EDIT */
+
+.category-actions .edit-user-btn {
+    display: inline-block;
+    padding: 8px 16px;
+
+    background: #7d563b;
+    color: white !important;
+
+    border: none;
+    border-radius: 7px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+/* DELETE */
+
+.delete-category-btn {
+    display: inline-block;
+    padding: 8px 16px;
+
+    background: #eee5df;
+    color: #6b4532;
+
+    border: none;
+    border-radius: 7px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.delete-category-btn:hover {
+    background: #dccbc0;
+}
+/* =========================================================
+   ADMIN RESPONSIVE - FINAL OVERRIDE
+========================================================= */
+
+/* Desktop */
+.admin-body {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    flex-shrink: 0;
+}
+
+.main-content {
+    flex: 1;
+
+    /* 重点：不要 width:100% */
+    width: auto;
+    min-width: 0;
+
+    box-sizing: border-box;
+}
+
+.users-page {
+    width: 100%;
+    max-width: 1100px;
+    box-sizing: border-box;
+}
+
+.users-card {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+
+
+.add-book-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+.add-book-page {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* =========================================================
+   RESPONSIVE - ALL MEDIA QUERIES
+========================================================= */
+
+
+/* =========================
+   1024px
+========================= */
+
+@media (max-width: 1024px) {
+
+    /* borrowing history */
+    .borrowing-table th:nth-child(1),
+    .borrowing-table td:nth-child(1) {
+        width: 30%;
+    }
+
+    .borrowing-table th:nth-child(2),
+    .borrowing-table td:nth-child(2),
+    .borrowing-table th:nth-child(3),
+    .borrowing-table td:nth-child(3),
+    .borrowing-table th:nth-child(4),
+    .borrowing-table td:nth-child(4),
+    .borrowing-table th:nth-child(5),
+    .borrowing-table td:nth-child(5),
+    .borrowing-table th:nth-child(6),
+    .borrowing-table td:nth-child(6) {
+        width: 14%;
+    }
+
+    /* admin */
+    .sidebar {
+        width: 190px;
+        padding: 25px 15px;
+    }
+
+    .sidebar h2 {
+        font-size: 22px;
+    }
+
+    .sidebar .right a {
+        padding: 11px 12px;
+        font-size: 14px;
+    }
+
+    .main-content {
+        width: auto;
+        min-width: 0;
+        padding: 25px;
+    }
+}
+
+
+/* =========================
+   1000px
+========================= */
 
 @media (max-width: 1000px) {
+
+    .main-content {
+        padding: 28px;
+    }
+
+    .profile-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-card {
+        max-width: 480px;
+        width: 100%;
+        margin: 0 auto;
+    }
 
     .books-card {
         padding: 20px;
@@ -6629,17 +6415,738 @@ body.admin-layout .category-page .container {
     }
 }
 
+
+/* =========================
+   992px
+========================= */
+
+@media (max-width: 992px) {
+
+    .category-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .book-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+/* =========================
+   850px
+========================= */
+
+@media (max-width: 850px) {
+
+    .admin-body {
+        display: block;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-height: auto;
+    }
+
+    .profile-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .main-content {
+        padding: 25px;
+    }
+}
+
+
+/* =========================
+   780px
+========================= */
+
+@media (max-width: 780px) {
+
+    .page-intro--header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .category-filter {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .category-filter select {
+        width: 100%;
+    }
+}
+
+
+/* =========================
+   768px
+========================= */
+
+@media (max-width: 768px) {
+
+    /* grids */
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .book-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .page-header h1 {
+        font-size: 28px;
+    }
+
+
+    /* fines */
+    .fines-stats {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .fines-table {
+        font-size: 13px;
+    }
+
+    .fines-table th,
+    .fines-table td {
+        padding: 10px 12px;
+    }
+
+
+    /* catalog */
+    .search-input,
+    .category-filter,
+    .btn-search,
+    .btn-clear {
+        width: 100%;
+    }
+
+
+    /* book card */
+    .book-card img {
+        height: 180px;
+    }
+
+    .book-title {
+        font-size: 12px;
+    }
+
+    .book-author {
+        font-size: 10px;
+    }
+
+
+    /* book details */
+    .book-details-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .book-cover-section {
+        min-height: 300px;
+    }
+
+    .book-cover-image {
+        max-height: 350px;
+    }
+
+    .book-detail-title {
+        font-size: 22px;
+    }
+
+
+    /* borrowing */
+    .borrowing-table {
+        font-size: 12px;
+    }
+
+    .borrowing-table th,
+    .borrowing-table td {
+        padding: 12px 8px;
+    }
+
+    .borrowing-table th:nth-child(1),
+    .borrowing-table td:nth-child(1) {
+        width: 35%;
+    }
+
+    .borrowing-table th:nth-child(2),
+    .borrowing-table td:nth-child(2),
+    .borrowing-table th:nth-child(3),
+    .borrowing-table td:nth-child(3),
+    .borrowing-table th:nth-child(4),
+    .borrowing-table td:nth-child(4),
+    .borrowing-table th:nth-child(5),
+    .borrowing-table td:nth-child(5),
+    .borrowing-table th:nth-child(6),
+    .borrowing-table td:nth-child(6) {
+        width: 13%;
+    }
+
+    .borrowing-book-thumb {
+        width: 40px;
+        height: 60px;
+    }
+
+    .borrowing-title {
+        font-size: 12px;
+    }
+
+    .borrowing-author {
+        font-size: 11px;
+    }
+
+    .badge {
+        padding: 4px 8px;
+        font-size: 11px;
+    }
+}
+
+
+/* =========================
+   700px - PHONE
+========================= */
+
 @media (max-width: 700px) {
+
+    /* ---------- GENERAL ---------- */
+
+    main {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+
+    /* ---------- HOME NAVBAR ---------- */
+
+    .navbar {
+        width: 100%;
+        padding: 15px 18px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 12px;
+
+        box-sizing: border-box;
+    }
+
+    .navbar nav > a {
+        margin: 0;
+        font-size: 25px;
+        white-space: nowrap;
+    }
+
+    .navbar .menu {
+        width: 100%;
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+
+        gap: 22px;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        padding: 4px 0 8px;
+
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .navbar .menu::-webkit-scrollbar {
+        display: none;
+    }
+
+    .navbar .menu > a {
+        flex: 0 0 auto;
+
+        margin: 0;
+
+        white-space: nowrap;
+
+        font-size: 15px;
+        font-weight: 600;
+    }
+
+    .navbar .menu .dropdown {
+        flex: 0 0 auto;
+    }
+
+    .navbar .menu .dropdown-toggle {
+        margin: 0;
+
+        white-space: nowrap;
+
+        font-size: 15px;
+        font-weight: 600;
+    }
+
+
+    /* ---------- SEARCH ---------- */
+
+    .navbar .search-bar {
+        width: 100%;
+        margin: 0;
+    }
+
+    .navbar .search-form {
+        width: 100%;
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+
+        gap: 8px;
+    }
+
+    .navbar .search-form input[type="search"],
+    .navbar .search-form input[type="text"] {
+        flex: 1;
+
+        width: auto;
+        min-width: 0;
+
+        margin: 0;
+    }
+
+    .navbar .search-form button {
+        flex: 0 0 auto;
+
+        width: auto;
+
+        margin: 0;
+
+        white-space: nowrap;
+    }
+
+
+    /* ---------- HOME CONTENT ---------- */
+
+    .featured-products {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .book-grid,
+    .product-grid {
+        width: 100%;
+        max-width: 100%;
+
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+
+    /* ---------- ADMIN ---------- */
+
+    .admin-body {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        min-height: auto;
+
+        position: relative;
+
+        padding: 20px;
+
+        box-sizing: border-box;
+    }
+
+    .sidebar h2 {
+        font-size: 22px;
+
+        margin: 0 0 15px;
+        padding: 0 85px 15px 0;
+
+        text-align: left;
+    }
+
+    .sidebar .right {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+
+        width: 100%;
+
+        gap: 8px;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .sidebar .right::-webkit-scrollbar {
+        display: none;
+    }
+
+    .sidebar .right a {
+        flex: 0 0 auto;
+
+        padding: 9px 12px;
+
+        white-space: nowrap;
+
+        font-size: 13px;
+    }
+
+    .sidebar .logout-btn {
+        position: absolute;
+
+        top: 17px;
+        right: 20px;
+
+        margin: 0;
+    }
+
+    .sidebar .logout-btn a {
+        padding: 8px 12px;
+
+        font-size: 12px;
+    }
+
+
+    /* ---------- MAIN CONTENT ---------- */
+
+    .main-content {
+        width: 100%;
+        min-width: 0;
+
+        padding: 15px;
+
+        box-sizing: border-box;
+    }
+
+
+    /* ---------- PROFILE ---------- */
+
+    .profile-form {
+        padding: 24px;
+    }
+
+    .profile-form .form-actions {
+        flex-direction: column;
+    }
+
+    .profile-form .form-actions button {
+        width: 100%;
+    }
+
+
+    /* ---------- BOOK MANAGEMENT ---------- */
 
     .books-top {
         flex-direction: column;
         align-items: flex-start;
+
         gap: 14px;
     }
 
     .add-book-btn {
         width: 100%;
+
         box-sizing: border-box;
+
         text-align: center;
     }
+
+
+    /* ---------- USERS ---------- */
+
+    .users-page {
+        width: 100%;
+    }
+
+    .users-page .page-header {
+        text-align: left;
+    }
+
+    .users-page .page-header h1 {
+        font-size: 25px;
+    }
+
+    .users-page .page-header .muted {
+        font-size: 13px;
+    }
+
+    .users-card {
+        width: 100%;
+
+        padding: 12px;
+
+        box-sizing: border-box;
+    }
+
+    .table-wrapper {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .user-table {
+        min-width: 650px;
+    }
+
+    .user-table th,
+    .user-table td {
+        padding: 10px 8px;
+
+        font-size: 13px;
+    }
+
+    /* =========================================
+    CATEGORY PAGE - HORIZONTAL SCROLL
+    ========================================= */
+
+    /* Featured Books / Category Books */
+    .category-books-section .book-grid {
+        display: flex;
+        flex-wrap: nowrap;
+
+        width: 100%;
+        max-width: 100%;
+
+        gap: 15px;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        padding: 5px 5px 15px;
+
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+
+        scrollbar-width: none;
+    }
+
+    .category-books-section .book-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .category-books-section .book-card {
+        flex: 0 0 78%;
+        max-width: 300px;
+        margin-top: 10px;   
+        scroll-snap-align: start;
+    }
+
+
+    /* =========================================
+    ALL CATEGORIES - HORIZONTAL SCROLL
+    ========================================= */
+
+    /* 整个 Category 页面不能横向滑 */
+    .category-page {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 20px 15px 40px;
+
+        box-sizing: border-box;
+        overflow-x: hidden;
+        min-width: 0;
+    }
+
+
+    /* Category 外层固定在页面里面 */
+    .category-grid-wrapper {
+        width: 100%;
+        max-width: 100%;
+
+        overflow: hidden;
+        min-width: 0;
+
+        box-sizing: border-box;
+    }
+
+
+    /* 只有这里可以左右滑 */
+    .category-grid-wrapper .category-grid {
+        display: flex;
+        flex-wrap: nowrap;
+
+        width: 100%;
+        max-width: 100%;
+
+        gap: 15px;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        padding: 5px 0 15px;
+
+        box-sizing: border-box;
+
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+
+        scrollbar-width: none;
+    }
+
+
+    .category-grid-wrapper .category-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+
+    /* 每一张 Category card */
+    .category-grid-wrapper .category-card {
+        flex: 0 0 78%;
+
+        width: auto;
+        max-width: 280px;
+
+        box-sizing: border-box;
+
+        scroll-snap-align: start;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .fines-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .fines-table thead {
+        display: none;
+    }
+
+    .fines-table tbody tr {
+        display: block;
+
+        padding: 16px;
+
+        border-bottom: 2px solid #EFEBE6;
+    }
+
+    .fines-table td {
+        display: flex;
+        justify-content: space-between;
+
+        padding: 6px 0;
+
+        border-bottom: none;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .book-grid {
+        grid-template-columns: 1fr;
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .category-card {
+        padding: 20px 16px;
+    }
+
+    .book-card img {
+        height: 160px;
+    }
+}
+/* =========================================
+   FIX PAGE HORIZONTAL OVERFLOW
+   Category itself can still scroll
+========================================= */
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    grid-template-columns: minmax(0, 1fr);
+}
+
+main {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+
+/* Category page must stay inside main */
+.category-page {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+
+/* header cannot be stretched by carousel */
+.category-page .page-header {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+
+/* Outer wrapper DOES NOT scroll */
+.category-grid-wrapper {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+
+/* ONLY this part scrolls */
+.category-grid-wrapper .category-grid {
+    display: flex;
+    flex-wrap: nowrap;
+
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    gap: 15px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    box-sizing: border-box;
+
+    padding: 5px 0 15px;
+
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+
+    scrollbar-width: none;
+}
+
+.category-grid-wrapper .category-grid::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* Each category card */
+.category-grid-wrapper .category-card {
+    flex: 0 0 78%;
+    max-width: 280px;
+
+    box-sizing: border-box;
+    scroll-snap-align: start;
 }

@@ -21,7 +21,7 @@ $stmt = $_db->query("
 $new_arrivals = $stmt->fetchAll();
 ?>
 
-<main class="new-arrivals-page">
+<div class="new-arrivals-page">
 
     <!-- ===== PAGE HEADER ===== -->
     <div class="page-header">
@@ -81,6 +81,7 @@ $new_arrivals = $stmt->fetchAll();
         </div>
     <?php endif; ?>
 
+</div>
 </main>
 
 <?php include '../footer.php'; ?>

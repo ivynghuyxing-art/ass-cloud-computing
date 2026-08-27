@@ -14,7 +14,7 @@ include 'customer/customer_header.php';
 </section>
 
 
-<main class="home-wrap">
+<div class="home-wrap">
 
     <!-- ===== QUICK LINKS ===== -->
     <section class="quick-links">
@@ -125,6 +125,7 @@ include 'customer/customer_header.php';
 
     </section>
 
+</div>
 </main>
 
 

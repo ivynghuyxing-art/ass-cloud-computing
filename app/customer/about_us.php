@@ -7,7 +7,7 @@ include 'customer_header.php';
 
 
 
-<section class="about-page">
+<div class="about-page">
 
     <!-- Hero Banner -->
     <div class="about-hero">
@@ -52,6 +52,7 @@ include 'customer_header.php';
         </div>
     </div>
 
-</section>
+</div>
+</main>
 
 <?php include '../footer.php'; ?>

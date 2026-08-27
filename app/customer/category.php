@@ -35,7 +35,7 @@ if ($category_id > 0) {
 }
 ?>
 
-<main class="category-page">
+<div class="category-page">
 
     <!-- ===== PAGE HEADER ===== -->
     <div class="page-header">
@@ -170,6 +170,7 @@ if ($category_id > 0) {
         <?php endif; ?>
     <?php endif; ?>
 
+</div>
 </main>
 
 <?php include '../footer.php'; ?>
