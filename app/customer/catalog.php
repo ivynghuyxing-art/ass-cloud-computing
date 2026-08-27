@@ -30,7 +30,7 @@ $stmt->execute();
 $books = $stmt->fetchAll();
 ?>
 
-<main class="catalog-page">
+<div class="catalog-page">
 
     <!-- ===== PAGE HEADER ===== -->
     <div class="page-header"> 
@@ -130,7 +130,7 @@ $books = $stmt->fetchAll();
 
     <?php endif; ?> 
 
+</div>
 </main> 
 
 <?php include '../footer.php'; ?>
-```

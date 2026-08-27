@@ -65,9 +65,9 @@ $new_arrivals = $stmt->fetchAll();
                     </div>
                     
                     <div class="book-actions">
-                        <a href="/customer/book_details.php" class="btn-view">
-                            View Details
-                        </a>
+                                <a href="/customer/book_details.php?id=<?= $book->book_id ?>" class="btn-view">
+                                    View Details
+                                </a>
                         <?php if ($book->available_quantity > 0): ?>
                             <form method="post" action="/customer/borrow.php" style="width:100%;">
                                 <input type="hidden" name="book_id" value="<?= $book->book_id ?>">

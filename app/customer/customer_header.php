@@ -8,6 +8,7 @@ $navCategories = $_db
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta
@@ -30,17 +31,35 @@ $navCategories = $_db
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
     <script src="/js/app.js"></script>
+
 </head>
+
+
 <body>
 
     <?php if ($info = temp('info')): ?>
+
         <div id="info">
             <?= $info ?>
         </div>
+
     <?php endif; ?>
 
 
+    <!-- =====================================
+         TOP HEADER
+    ====================================== -->
+
     <header>
+
+        <!-- 手机才显示 -->
+        <a
+            href="/home.php"
+            class="mobile-brand"
+        >
+            Book Nest
+        </a>
+
 
         <div class="auth">
 
@@ -56,6 +75,7 @@ $navCategories = $_db
                     Register
                 </a>
 
+
             <?php else: ?>
 
                 <a
@@ -70,17 +90,34 @@ $navCategories = $_db
 
                     <img
                         src="/photo/<?= encode(
-                            $_SESSION['user']->profile_photo ?? ''
+                            $_SESSION['user']->profile_photo ?? 'default.png'
                         ) ?>"
                         alt="Profile Photo"
                     >
 
+
                     <div class="dropdown-content">
-                        <a href="/customer/customer_profile.php">My Profile</a>
-                        <a href="/customer/borrowing_history.php">My Borrowing History</a>
-                        <a href="/customer/change_password.php">Change Password</a>
-                        <a href="/customer/wishlist.php">My WishList</a>
-                        <a href="/customer/fines.php">My Fine</a>
+
+                        <a href="/customer/customer_profile.php">
+                            My Profile
+                        </a>
+
+                        <a href="/customer/borrowing_history.php">
+                            My Borrowing History
+                        </a>
+
+                        <a href="/customer/change_password.php">
+                            Change Password
+                        </a>
+
+                        <a href="/customer/wishlist.php">
+                            My WishList
+                        </a>
+
+                        <a href="/customer/fines.php">
+                            My Fine
+                        </a>
+
                     </div>
 
                 </div>
@@ -92,9 +129,18 @@ $navCategories = $_db
     </header>
 
 
+
+    <!-- =====================================
+         NAVIGATION BAR
+    ====================================== -->
+
     <nav class="navbar">
 
-        <a href="/">
+        <!-- 电脑显示，手机隐藏 -->
+        <a
+            href="/"
+            class="desktop-brand"
+        >
             Book Nest
         </a>
 
@@ -150,34 +196,82 @@ $navCategories = $_db
     </nav>
 
 
-   <main>
 
-    <?php if (empty($hidePageTitle)): ?>
+    <!-- =====================================
+         MAIN
+    ====================================== -->
 
-        <?php if (!empty($_title)): ?>
-            <h1 class="page-title">
-        <?= encode($_title) ?>
-            </h1>
+    <main>
+
+        <?php if (empty($hidePageTitle)): ?>
+
+            <?php if (!empty($_title)): ?>
+
+                <h1 class="page-title">
+                    <?= encode($_title) ?>
+                </h1>
+
+            <?php endif; ?>
+
         <?php endif; ?>
 
-    <?php endif; ?>
 
-            <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var dropdown = document.querySelector('.user-photo-dropdown');
-        if (dropdown) {
-            var img = dropdown.querySelector('img');
-            if (img) {
-                img.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    dropdown.classList.toggle('active');
-                });
-            }
-        }
-        document.addEventListener('click', function(e) {
-            if (dropdown && !dropdown.contains(e.target)) {
-                dropdown.classList.remove('active');
-            }
-        });
-    });
-    </script>
+
+        <script>
+
+            document.addEventListener(
+                'DOMContentLoaded',
+                function () {
+
+                    var dropdown =
+                        document.querySelector(
+                            '.user-photo-dropdown'
+                        );
+
+                    if (dropdown) {
+
+                        var img =
+                            dropdown.querySelector('img');
+
+                        if (img) {
+
+                            img.addEventListener(
+                                'click',
+                                function (e) {
+
+                                    e.stopPropagation();
+
+                                    dropdown
+                                        .classList
+                                        .toggle('active');
+
+                                }
+                            );
+
+                        }
+
+                    }
+
+
+                    document.addEventListener(
+                        'click',
+                        function (e) {
+
+                            if (
+                                dropdown &&
+                                !dropdown.contains(e.target)
+                            ) {
+
+                                dropdown
+                                    .classList
+                                    .remove('active');
+
+                            }
+
+                        }
+                    );
+
+                }
+            );
+
+        </script>

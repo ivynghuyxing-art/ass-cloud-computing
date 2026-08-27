@@ -73,7 +73,10 @@ if ($keyword !== '') {
 
     <?php else: ?>
 
-
+        <div class="results-info">
+            Showing <?= count($books) ?> result<?= count($books) !== 1 ? 's' : '' ?>
+            for "<strong><?= encode($keyword) ?></strong>"
+        </div>
 
         <div class="book-grid">
 
@@ -99,7 +102,6 @@ if ($keyword !== '') {
                         <?php endif; ?>
 
                     </div>
-
 
                     <div class="book-info">
 
@@ -129,13 +131,17 @@ if ($keyword !== '') {
                             <?= $book->quantity ?>
                         </p>
 
-
-                        <a
-                            href="/customer/book_details.php?id=<?= $book->book_id ?>"
-                            class="view-detail-btn"
-                        >
-                            View Details
-                        </a>
+                        <div class="book-actions">
+                                <a href="/customer/book_details.php?id=<?= $book->book_id ?>" class="btn-view">
+                                    View Details
+                                </a>
+                        <?php if ($book->available_quantity > 0): ?>
+                            <form method="post" action="/customer/borrow.php" style="width:100%;">
+                                <input type="hidden" name="book_id" value="<?= $book->book_id ?>">
+                                <input type="hidden" name="quantity" value="1">
+                                <button type="submit" class="btn-cart">Borrow</button>
+                            </form>
+                        <?php endif; ?>
 
                     </div>
 
@@ -149,5 +155,6 @@ if ($keyword !== '') {
 
 </div>
 
+</main>
 
 <?php include '../footer.php'; ?>

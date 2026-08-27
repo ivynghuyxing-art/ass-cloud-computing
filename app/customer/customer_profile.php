@@ -93,28 +93,9 @@ if (is_post()) {
                 <button type="submit" class="btn-save">Submit</button>
                 <button type="reset" class="btn-reset">Reset</button>
             </div>
-            <a href="/" class="btn-back-home">Back To Home</a>
+            <a href="/" class="btn-back-home"> ← Back To Home</a>
             </div>
             
         </form>
     </div>
 </div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    var fileInput = document.querySelector('.upload input[type="file"]');
-    var previewImg = document.getElementById('profilePreview');
-    
-    if (fileInput) {
-        fileInput.addEventListener('change', function(e) {
-            if (this.files && this.files[0]) {
-                var reader = new FileReader();
-                reader.onload = function(ev) {
-                    previewImg.src = ev.target.result;
-                };
-                reader.readAsDataURL(this.files[0]);
-            }
-        });
-    }
-});
-</script>

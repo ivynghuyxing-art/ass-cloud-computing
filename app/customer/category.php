@@ -166,7 +166,15 @@ if ($category_id > 0) {
                         </div>
                     <?php endforeach; ?>
                 </div>
-            </div>
+                        <!-- ===== VIEW ALL ===== -->
+                    <div class="featured-view-all">
+
+                        <a href="/customer/catalog.php" class="view-all-btn">
+                            View All →
+                        </a>
+
+                    </div>
+                </div>
         <?php endif; ?>
     <?php endif; ?>
 

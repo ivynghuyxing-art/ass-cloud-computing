@@ -29,7 +29,7 @@ $stm->execute([$user_id]);
 $records = $stm->fetchAll();
 ?>
 
-<main class="borrowing-page">
+<div class="borrowing-page">
     
     <!-- ===== Page Header ===== -->
     <div class="page-header">
@@ -122,6 +122,7 @@ $records = $stm->fetchAll();
         </div>
     <?php endif; ?>
 
+</div>
 </main>
 
 <?php include '../footer.php'; ?>

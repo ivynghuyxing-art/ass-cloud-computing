@@ -106,12 +106,20 @@ include 'customer/customer_header.php';
                                 <?= encode($book->author) ?>
                             </p>
 
-                            <a
-                                href="/customer/book_details.php?id=<?= $book->book_id ?>"
-                                class="btn-small"
-                            >
-                                View Details
-                            </a>
+                            <div class="book-actions">
+                                <a href="/customer/book_details.php" class="btn-view">
+                                    View Details
+                                </a>
+
+                            <?php if ($book->available_quantity > 0): ?>
+                                <form method="post" action="/customer/borrow.php" style="width:100%;">
+                                    <input type="hidden" name="book_id" value="<?= $book->book_id ?>">
+                                    <input type="hidden" name="quantity" value="1">
+                                        <button type="submit" class="btn-cart">
+                                            Borrow
+                                        </button>
+                                </form>
+                        <?php endif; ?>
 
                         </div>
 
