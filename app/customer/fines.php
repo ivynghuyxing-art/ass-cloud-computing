@@ -98,7 +98,7 @@ include 'customer_header.php';
 ?>
 
 
-<main class="fines-page">
+<div class="fines-page">
 
 
     <!-- ===== Page Header ===== -->
