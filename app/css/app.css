@@ -9933,3 +9933,335 @@ main {
         min-width: 155px !important;
     }
 }
+
+/* =========================================================
+   ADMIN LAYOUT - FINAL FIX
+   LEFT SIDEBAR FIXED, RIGHT CONTENT SCROLL ONLY
+   Added as final override to avoid conflicts with duplicate
+   .sidebar / .main-content rules earlier in this stylesheet.
+========================================================= */
+
+body.admin-layout {
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+    background: #f6f1ec;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #3f2d22;
+}
+
+.admin-body {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 240px;
+    height: 100vh;
+    min-height: 0;
+    flex-shrink: 0;
+    background: #7b573d;
+    color: white;
+    padding: 28px 22px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.sidebar h2 {
+    margin: 0 0 28px;
+    padding-bottom: 16px;
+    text-align: center;
+    color: white;
+    font-size: 27px;
+    font-style: italic;
+    letter-spacing: 1px;
+    border-bottom: 1px solid rgba(255,255,255,0.25);
+}
+
+.sidebar .right {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+}
+
+.sidebar .right a {
+    display: block;
+    padding: 13px 16px;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    transition: 0.2s ease;
+}
+
+.sidebar .right a:hover {
+    background: rgba(255,255,255,0.12);
+}
+
+.sidebar .right a.active {
+    background: #f4e8dc;
+    color: #5b3e2c;
+    font-weight: 700;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+}
+
+.sidebar .logout-btn {
+    margin-top: auto;
+    margin-bottom: 0;
+}
+
+.sidebar .logout-btn a {
+    display: block;
+    text-align: center;
+    background: #68462f;
+    color: white;
+    padding: 12px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.sidebar .logout-btn a:hover {
+    background: #563923;
+}
+
+.main-content {
+    flex: 1;
+    width: auto;
+    min-width: 0;
+    height: 100vh;
+    min-height: 0;
+    padding: 38px 48px;
+    background: #f8f5f2;
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
+.add-book-page {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.add-book-page .page-header {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto 30px;
+    box-sizing: border-box;
+}
+
+.add-book-page .page-header h1 {
+    margin: 0 0 8px;
+    font-size: 34px;
+    color: #5c3d2a;
+}
+
+.add-book-page .page-header .muted {
+    margin: 0;
+    color: #8a7565;
+    font-size: 15px;
+}
+
+.add-book-card {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 30px;
+    background: white;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    box-sizing: border-box;
+}
+
+.add-book-card form {
+    width: 100%;
+}
+
+.add-book-card .form-group {
+    margin-bottom: 22px;
+}
+
+.add-book-card .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #5c3d2a;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.add-book-card input[type="text"],
+.add-book-card input[type="number"],
+.add-book-card input[type="file"],
+.add-book-card select,
+.add-book-card textarea {
+    width: 100%;
+    padding: 12px 14px;
+    box-sizing: border-box;
+    border: 1px solid #dccbbf;
+    border-radius: 7px;
+    background: #fffdfb;
+    color: #222;
+    font-size: 15px;
+}
+
+.add-book-card input:focus,
+.add-book-card select:focus,
+.add-book-card textarea:focus {
+    outline: none;
+    border-color: #8b6042;
+    box-shadow: 0 0 0 3px rgba(139,96,66,0.10);
+}
+
+.add-book-card .form-group img {
+    display: block;
+    max-width: 120px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.add-book-card .error,
+.add-book-card .err {
+    display: block;
+    margin-top: 6px;
+    color: red;
+    font-size: 13px;
+}
+
+.add-book-card .form-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.add-book-card .form-actions button[type="submit"] {
+    width: 100%;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 7px;
+    background: #7b573d;
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.add-book-card .form-actions button[type="submit"]:hover {
+    background: #62432f;
+}
+
+.add-book-card .reset-btn {
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 7px;
+    background: #e7ddd4;
+    color: #5c3d2a;
+    text-align: left;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.add-book-card .reset-btn:hover {
+    background: #d8c8bb;
+}
+
+.main-content::-webkit-scrollbar {
+    width: 10px;
+}
+
+.main-content::-webkit-scrollbar-track {
+    background: #eee6df;
+}
+
+.main-content::-webkit-scrollbar-thumb {
+    background: #9b765d;
+    border-radius: 10px;
+}
+
+.main-content::-webkit-scrollbar-thumb:hover {
+    background: #7b573d;
+}
+
+@media (max-width: 850px) {
+    body.admin-layout {
+        height: auto;
+        min-height: 100vh;
+        overflow: auto;
+    }
+
+    .admin-body {
+        display: block;
+        height: auto;
+        min-height: 100vh;
+        overflow: visible;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        min-height: auto;
+        padding: 20px;
+        overflow: visible;
+    }
+
+    .sidebar .logout-btn {
+        margin-top: 20px;
+    }
+
+    .main-content {
+        width: 100%;
+        height: auto;
+        min-height: 100vh;
+        padding: 25px;
+        overflow: visible;
+    }
+
+    .add-book-page {
+        padding: 10px;
+    }
+
+    .add-book-card {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 500px) {
+    .main-content {
+        padding: 18px;
+    }
+
+    .add-book-page {
+        padding: 5px;
+    }
+
+    .add-book-card {
+        padding: 18px;
+    }
+
+    .add-book-page .page-header h1 {
+        font-size: 28px;
+    }
+}
