@@ -80,4 +80,4 @@ $title = 'Verify Email | Book Nest';
     </div>
 </body>
 </html>
-<?php include '_foot.php'; ?>
+<?php include 'footer.php'; ?>
